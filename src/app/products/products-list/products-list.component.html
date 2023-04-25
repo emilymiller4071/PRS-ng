@@ -1,0 +1,29 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{ pageTitle }}</h5>
+        <table class="table">  
+            <thead>
+                <tr>
+                    <th scope="col">Part Number</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Unit</th>
+                    <th scope="col">Photo Path</th>
+                    <th scope="col">Vendor</th>
+                </tr>   
+            </thead>
+                <tr *ngFor="let product of products">
+                    <td scope="row">{{ product.partNbr }}</td>
+                    <td scope="row">{{ product.name }}</td>
+                    <td scope="row">{{ product.price }}</td>
+                    <td scope="row">{{ product.unit }}</td>
+                    <td scope="row">{{ product.photoPath }}</td>
+                    <td scope="row">{{ product.Vendor.name }}</td>
+                </tr>
+            <tbody>
+
+
+            </tbody>
+        </table> 
+    </div>
+</div>
