@@ -2,7 +2,8 @@ import { Component } from "@angular/core";
 
 @Component({
     selector: 'request-list',
-    templateUrl: './request-list.component.html'
+    templateUrl: './request-list.component.html',
+    styleUrls: ['./request-list.component.html']
 })
 export class RequestListComponent {
     pageTitle: string = "Request List";

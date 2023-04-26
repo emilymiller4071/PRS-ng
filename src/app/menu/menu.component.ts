@@ -2,9 +2,10 @@ import { Component } from "@angular/core";
 
 @Component({
     selector: 'menu',
-    templateUrl: './menu.component.html'
+    templateUrl: './menu.component.html',
+    styleUrls: ['./menu.component.html']
 })
 export class MenuComponent {
     pageTitle: string = "Menu Component";
-    products: any[] = [];
+    menu: any[] = [];
 }
