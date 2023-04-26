@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
-import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
 import { ProductCreateComponent } from './products/product-create/product-create.component';
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
@@ -30,7 +30,7 @@ import { VendorListComponent } from './vendors/vendor-list/vendor-list.component
   declarations: [
     AppComponent,
     MenuComponent,
-    HomeComponent,
+    HeaderComponent,
     FooterComponent,
     ProductListComponent,
     ProductEditComponent,
