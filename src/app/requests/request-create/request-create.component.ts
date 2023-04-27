@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 
 @Component({
-    selector: 'request-create',
+    selector: 'app-request-create',
     templateUrl: './request-create.component.html',
     styleUrls: ['./request-create.component.html']
 })

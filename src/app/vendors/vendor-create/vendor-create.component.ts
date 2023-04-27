@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 
 @Component({
-    selector: 'vendor-create',
+    selector: 'app-vendor-create',
     templateUrl: './vendor-create.component.html',
     styleUrls: ['./vendor-create.component.html']
 })

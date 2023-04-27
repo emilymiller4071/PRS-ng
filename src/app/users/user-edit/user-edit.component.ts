@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 
 @Component({
-    selector: 'user-edit',
+    selector: 'app-user-edit',
     templateUrl: './user-edit.component.html',
     styleUrls: ['./user-edit.component.html']
 })

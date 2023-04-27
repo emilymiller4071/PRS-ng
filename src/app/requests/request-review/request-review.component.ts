@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 
 @Component({
-    selector: 'request-review',
+    selector: 'app-request-review',
     templateUrl: './request-review.component.html',
     styleUrls: ['./request-review.component.html']
 })

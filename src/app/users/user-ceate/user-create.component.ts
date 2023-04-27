@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 
 @Component({
-    selector: 'user-create',
+    selector: 'app-user-create',
     templateUrl: './user-create.component.html',
     styleUrls: ['./user-create.component.html']
 })
