@@ -7,5 +7,5 @@ import { Component } from "@angular/core";
 })
 export class RequestListComponent {
     pageTitle: string = "Request List";
-    products: any[] = [];
+    requests: any[] = [];
 }

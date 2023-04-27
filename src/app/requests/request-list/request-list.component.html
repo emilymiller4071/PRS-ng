@@ -1,4 +1,43 @@
-<p>{{pageTitle}} works!</p>
-
 <app-menu></app-menu>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{ pageTitle }}</h5>
+        <table class="table">  
+            <thead>
+
+                <tr>
+                    <th scope="col">Description</th>
+                    <th scope="col">Justification</th>
+                    <th scope="col">Submitted Date</th>
+                    <th scope="col">Date Needed</th>
+                    <th scope="col">Delivery Mode</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Detail</th>
+                    <th scope="col">Edit</th>
+                </tr> 
+
+            </thead>
+
+            <tbody>
+
+                <tr *ngFor="let request of requests">
+                    <td scope="row">{{ request.description }}</td>
+                    <td scope="row">{{ request.justification }}</td>
+                    <td scope="row">{{ request.submittedDate }}</td>
+                    <td scope="row">{{ request.dateNeeded }}</td>
+                    <td scope="row">{{ request.deliveryMode }}</td>
+                    <td scope="row">{{ request.status }}</td>
+                    <td scope="row">{{ request.total }}</td>
+                    <td scope="row"></td>
+                    <td scope="row"></td>
+                </tr>
+
+            </tbody>
+        </table> 
+    </div>
+</div>
+
+
 <app-footer></app-footer>
