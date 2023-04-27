@@ -7,6 +7,7 @@ import { Component } from "@angular/core";
 })
 export class ProductListComponent {
     pageTitle: string = "Products List";
+    name: string = "product";
     products: any[] = [
         {
             "id": 1,
@@ -207,66 +208,8 @@ export class ProductListComponent {
               "phone": "859-567-8901",
               "email": "super@meiyer.com"
             }
-          },
-          {
-            "id": 11,
-            "partNbr": "DEC",
-            "name": "wall decor",
-            "price": 50,
-            "unit": "each",
-            "photoPath": null,
-            "vendorId": 4,
-            "Vendor": {
-              "id": 4,
-              "code": "HOB",
-              "name": "Hobby Foyer",
-              "address": "7345 Hobby Street",
-              "city": "Independence",
-              "state": "KY",
-              "zip": "41017",
-              "phone": "859-123-4567",
-              "email": "thefoyer@hobbyfoyer.com"
-            }
-          },
-          {
-            "id": 12,
-            "partNbr": "ORG",
-            "name": "desk organizer",
-            "price": 12.5,
-            "unit": "each",
-            "photoPath": null,
-            "vendorId": 4,
-            "Vendor": {
-              "id": 4,
-              "code": "HOB",
-              "name": "Hobby Foyer",
-              "address": "7345 Hobby Street",
-              "city": "Independence",
-              "state": "KY",
-              "zip": "41017",
-              "phone": "859-123-4567",
-              "email": "thefoyer@hobbyfoyer.com"
-            }
-          },
-          {
-            "id": 13,
-            "partNbr": "DSK",
-            "name": "desk",
-            "price": 150,
-            "unit": "each",
-            "photoPath": null,
-            "vendorId": 4,
-            "Vendor": {
-              "id": 4,
-              "code": "HOB",
-              "name": "Hobby Foyer",
-              "address": "7345 Hobby Street",
-              "city": "Independence",
-              "state": "KY",
-              "zip": "41017",
-              "phone": "859-123-4567",
-              "email": "thefoyer@hobbyfoyer.com"
-            }
-          }
+          }   
     ]
+
+    onCreate() {}
 }
