@@ -7,6 +7,7 @@
         <h5 class="card-title">{{ pageTitle }}</h5>
         <table class="table">  
             <thead>
+                
                 <tr>
                     <th scope="col">First Name</th>
                     <th scope="col">Last Name</th>
@@ -17,8 +18,12 @@
                     <th scope="col">Reviewer</th>
                     <th scope="col">Detail</th>
                     <th scope="col">Edit</th>
-                </tr>   
+                </tr> 
+
             </thead>
+
+            <tbody>
+
                 <tr *ngFor="let user of users">
                     <td scope="row">{{ user.firstName }}</td>
                     <td scope="row">{{ user.lastName }}</td>
@@ -30,16 +35,6 @@
                     <td scope="row"></td>
                     <td scope="row"></td>
                 </tr>
-            <tbody>
-                ID					INT					NOT NULL IDENTITY PRIMARY KEY,
-                Username			NVARCHAR(30)			NOT NULL UNIQUE,
-                Password			NVARCHAR(30)			NOT NULL,
-                FirstName			NVARCHAR(30)			NOT NULL,
-                LastName			NVARCHAR(30)			NOT NULL,
-                Phone				VARCHAR(12)			NULL,
-                Email				VARCHAR(255)		NULL,
-                IsReviewer			BIT					NOT NULL,
-                IsAdmin	
 
             </tbody>
         </table> 
