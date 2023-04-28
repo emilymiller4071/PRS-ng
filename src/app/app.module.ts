@@ -54,7 +54,8 @@ import { VendorListComponent } from './vendors/vendor-list/vendor-list.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ProductListComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
