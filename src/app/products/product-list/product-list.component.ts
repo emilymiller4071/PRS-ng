@@ -8,7 +8,7 @@ import { Router } from "@angular/router";
 })
 export class ProductListComponent {
     pageTitle: string = "Products List";
-    name: string = "product";
+    buttonText: string = "product";
     products: any[] = [
         {
             "id": 1,
