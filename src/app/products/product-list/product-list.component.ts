@@ -210,9 +210,4 @@ export class ProductListComponent {
           }   
     ]
 
-    constructor() {}
-
-//     onCreate() {
-//       this.router.navigate(['product/create']);
-//     }
 }
