@@ -33,8 +33,11 @@
                     <td scope="row">{{ product.unit }}</td>
                     <td scope="row">{{ product.photoPath }}</td>
                     <td scope="row">{{ product.Vendor.name }}</td>
-                    <td scope="row"></td>
-                    <td scope="row"></td>
+                    <td> 
+                        <a routerLink="/product/detail/{{ product.id }}">
+                            <img class="icon" src="../../../assets/detail.png"></a></td>
+
+                    <td></td>
                 </tr>
    
             </tbody>

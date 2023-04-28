@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-import { Router } from "@angular/router";
 
 @Component({
     selector: 'app-products-list',
@@ -8,7 +7,6 @@ import { Router } from "@angular/router";
 })
 export class ProductListComponent {
     pageTitle: string = "Products List";
-    buttonText: string = "product";
     products: any[] = [
         {
             "id": 1,
@@ -211,10 +209,5 @@ export class ProductListComponent {
             }
           }   
     ]
-
-    constructor(private router: Router) {}
-
-//     onCreate() {
-//       this.router.navigate(['product/create']);
-//     }
+  
 }

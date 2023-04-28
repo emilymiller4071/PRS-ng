@@ -1,0 +1,10 @@
+td, th {
+    width: 100px;
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+}
+
+.icon {
+    height: 10px;
+}
