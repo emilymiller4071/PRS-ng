@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
     selector: 'app-products-list',
@@ -211,5 +212,9 @@ export class ProductListComponent {
           }   
     ]
 
-    onCreate() {}
+    constructor(private router: Router) {}
+
+//     onCreate() {
+//       this.router.navigate(['product/create']);
+//     }
 }

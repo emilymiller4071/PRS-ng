@@ -7,10 +7,9 @@
     <div class="card-body">
         <h5 class="card-title">{{ pageTitle }}</h5>
 
-        <a href="/product/create">
-            <app-create-button (btnClick)="onCreate()" text="+ New Product" [isDisabled]="false">
-            </app-create-button>   
-        </a>    
+        <a routerLink="product/create">
+          <button text="+ NEW PRODUCT">+ NEW PRODUCT</button>   
+        </a>   
 
         <table class="table">  
             <thead>

@@ -25,7 +25,7 @@ import { VendorCreateComponent } from './vendors/vendor-create/vendor-create.com
 import { VendorDetailComponent } from './vendors/vendor-detail/vendor-detail.component';
 import { VendorEditComponent } from './vendors/vendor-edit/vendor-edit.component';
 import { VendorListComponent } from './vendors/vendor-list/vendor-list.component';
-import { CreateButtonComponent } from './create-button/create-button.component';
+// import { CreateButtonComponent } from './create-button/create-button.component';
 
 @NgModule({
   declarations: [
@@ -51,8 +51,8 @@ import { CreateButtonComponent } from './create-button/create-button.component';
     RequestListComponent,
     RequestEditComponent,
     RequestDetailComponent,
-    RequestCreateComponent,
-    CreateButtonComponent
+    RequestCreateComponent
+    // CreateButtonComponent
   ],
   imports: [
     BrowserModule,
