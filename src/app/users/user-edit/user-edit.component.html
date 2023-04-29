@@ -1,4 +1,37 @@
 <p>{{pageTitle}} works!</p>
 
+<head>
 <app-menu></app-menu>
+</head>
+<body>
+
+<div class="form-container">
+    <form class="form">
+
+        <label for="firstName">First Name</label>
+        <input type="text" name="firstName" placeholder="{{user.firstName}}"><br>
+
+        <label for="lastName">Last Name</label>
+        <input type="text" name="lastName" placeholder="{{user.lastName}}"><br>
+
+        <label for="phone">Phone Number</label>
+        <input type="text" name="phone" placeholder="{{user.phone}}"><br>
+
+        <label for="email">Email Address</label>
+        <input type="text" name="email" placeholder="{{user.email}}"><br>
+
+        <label for="username">Username</label>
+        <input type="text" name="username" placeholder="{{user.username}}"><br>
+
+        <label for="password">Password</label>
+        <input type="text" name="firstName" placeholder="{{user.password}}"><br>
+
+        <button type="save">Save</button>
+
+    </form>
+</div>
+
+
+
 <app-footer></app-footer>
+</body>

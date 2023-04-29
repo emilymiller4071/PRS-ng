@@ -7,4 +7,15 @@ import { Component } from "@angular/core";
 })
 export class UserEditComponent {
     pageTitle: string = "User Edit";
+    user: any = 
+    {
+        "id": 1,
+        "firstName": "Emily",
+        "lastName": "Miller",
+        "phone": "859-555-1234",
+        "email": "emiller@mail.com",
+        "username": "emiller",
+        "isReviewer": true,
+        "isAdmin": true
+    }
 }

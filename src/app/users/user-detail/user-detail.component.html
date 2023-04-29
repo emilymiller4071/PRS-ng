@@ -4,7 +4,7 @@
 </head>
 
 <body>
-    <div class="card-container" *ngFor="let user of users">
+    <div class="card-container">
         <div class="col-sm-6">
             <div class="card large">
                 <section class="section dark">
@@ -21,6 +21,8 @@
                     <p>
                         <mark class="reviewer">Reviewer : {{user.isReviewer? 'yes': 'no'}}</mark>
                     </p>
+                    <button type="edit">Edit</button>
+                    <button type="delete">Delete</button>
                 </section>
             </div>
         </div>
