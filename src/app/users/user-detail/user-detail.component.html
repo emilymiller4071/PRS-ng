@@ -1,4 +1,32 @@
 <p>{{pageTitle}} works!</p>
-
+<head>
 <app-menu></app-menu>
+</head>
+
+<body>
+    <div class="card-container" *ngFor="let user of users">
+        <div class="col-sm-6">
+            <div class="card large">
+                <section class="section dark">
+                    <h3 class="strong">
+                    <strong>{{user.firstName}} {{user.lastName}}</strong>
+                    </h3>
+                    <p>Phone Number : {{user.phone}}</p>
+                    <p>Email : {{user.email}}</p>
+                    <p>Username : {{user.username}}</p>
+                    <p>Password : {{user.password}}</p>
+                    <p>
+                    <mark class="admin">Admin : {{user.isAdmin? 'yes': 'no'}}</mark>
+                    </p>
+                    <p>
+                        <mark class="reviewer">Reviewer : {{user.isReviewer? 'yes': 'no'}}</mark>
+                    </p>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+
 <app-footer></app-footer>
+</body>
