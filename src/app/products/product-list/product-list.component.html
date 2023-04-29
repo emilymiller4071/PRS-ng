@@ -29,7 +29,7 @@
                 <tr *ngFor="let product of products">
                     <td class="cells" scope="row">{{ product.partNbr }}</td>
                     <td class="cells" scope="row">{{ product.name }}</td>
-                    <td class="cells" scope="row">{{ product.price }}</td>
+                    <td class="cells" scope="row">{{ product.price | currency: 'USD' : 'symbol' : '0.0-2' }}</td>
                     <td class="cells" scope="row">{{ product.unit }}</td>
                     <td class="cells" scope="row">{{ product.photoPath }}</td>
                     <td class="cells" scope="row">{{ product.Vendor.name }}</td>

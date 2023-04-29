@@ -1,4 +1,42 @@
 <p>{{pageTitle}} works!</p>
 
+<head>
 <app-menu></app-menu>
+</head>
+<body>
+
+<div class="form-container">
+    <form class="form">
+
+        <label for="photoPath">Photo Link :</label>
+        <input type="text" name="photoPath" placeholder="{{product.photoPath}}"><br>
+
+        <label for="partNbr">Part Number :</label>
+        <input type="text" name="partNbr" placeholder="{{product.partNbr}}"><br>
+
+        <label for="name">Name :</label>
+        <input type="text" name="name" placeholder="{{product.name}}"><br>
+
+        <label for="Vendor">Vendor :</label>
+        <select name="Vendor" placeholder="select vendor">
+            <option value="" selected>select vendor</option>
+            <option>Targette</option>
+            <option>Meiyer</option>
+            <option>Hobby Foyer</option>
+        </select><br>
+
+        <label for="unit">Unit :</label>
+        <input type="text" name="unit" placeholder="{{product.unit}}"><br>
+
+        <label for="price">Price :</label>
+        <input type="text" name="price" placeholder="{{product.price | currency: 'USD' : 'symbol' : '0.0-2'}}"><br>
+
+        <button type="save">Save</button>
+
+    </form>
+</div>
+
+
+
 <app-footer></app-footer>
+</body>
