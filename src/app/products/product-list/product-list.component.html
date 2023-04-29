@@ -11,35 +11,37 @@
           <button text="+ NEW PRODUCT">+ NEW PRODUCT</button>   
         </a>   
 
-        <button>
-            <a routerLink="/product/create">+ NEW PRODUCT</a></button>
         <table class="table">  
             <thead>
                 <tr>
-                    <th scope="col">Part Number</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Unit</th>
-                    <th scope="col">Photo</th>
-                    <th scope="col">Vendor</th>
-                    <th scope="col">Detail</th>
-                    <th scope="col">Edit</th>
+                    <th class="headers" scope="col">Part Number</th>
+                    <th class="headers" scope="col">Name</th>
+                    <th class="headers" scope="col">Price</th>
+                    <th class="headers" scope="col">Unit</th>
+                    <th class="headers" scope="col">Photo</th>
+                    <th class="headers" scope="col">Vendor</th>
+                    <th class="iconHeaders" scope="col">Detail</th>
+                    <th class="iconHeaders" scope="col">Edit</th>
                 </tr>   
             </thead>
 
             <tbody>
                 <tr *ngFor="let product of products">
-                    <td scope="row">{{ product.partNbr }}</td>
-                    <td scope="row">{{ product.name }}</td>
-                    <td scope="row">{{ product.price }}</td>
-                    <td scope="row">{{ product.unit }}</td>
-                    <td scope="row">{{ product.photoPath }}</td>
-                    <td scope="row">{{ product.Vendor.name }}</td>
-                    <td> 
+                    <td class="cells" scope="row">{{ product.partNbr }}</td>
+                    <td class="cells" scope="row">{{ product.name }}</td>
+                    <td class="cells" scope="row">{{ product.price }}</td>
+                    <td class="cells" scope="row">{{ product.unit }}</td>
+                    <td class="cells" scope="row">{{ product.photoPath }}</td>
+                    <td class="cells" scope="row">{{ product.Vendor.name }}</td>
+                    <td id="icons"> 
                         <a routerLink="/product/detail/{{ product.id }}">
-                            <img class="icon" src="../../../assets/detail.png"></a></td>
+                        <img class="icon" src="../../../assets/detail.png"></a>
+                    </td>
 
-                    <td></td>
+                    <td id="icons">
+                        <a routerLink="/product/edit/{{ product.id }}">
+                            <img class="icon" src="../../../assets/edit.png"></a>
+                    </td>
                 </tr>
    
             </tbody>

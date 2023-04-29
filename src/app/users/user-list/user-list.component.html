@@ -35,8 +35,15 @@
                     <td scope="row">{{ user.email }}</td>
                     <td scope="row">{{ user.isAdmin }}</td>
                     <td scope="row">{{ user.isReviewer }}</td>
-                    <td scope="row"></td>
-                    <td scope="row"></td>
+                    <td> 
+                        <a routerLink="/user/detail/{{ user.id }}">
+                        <img class="icon" src="../../../assets/detail.png"></a>
+                    </td>
+
+                    <td>
+                        <a routerLink="/user/edit/{{ user.id }}">
+                            <img class="icon" src="../../../assets/edit.png"></a>
+                    </td>
                 </tr>
 
             </tbody>

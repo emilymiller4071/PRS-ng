@@ -35,8 +35,15 @@
                     <td scope="row">{{ request.deliveryMode }}</td>
                     <td scope="row">{{ request.status }}</td>
                     <td scope="row">{{ request.total }}</td>
-                    <td scope="row"></td>
-                    <td scope="row"></td>
+                    <td> 
+                        <a routerLink="/request/detail/{{ request.id }}">
+                        <img class="icon" src="../../../assets/detail.png"></a>
+                    </td>
+
+                    <td>
+                        <a routerLink="/request/edit/{{ request.id }}">
+                            <img class="icon" src="../../../assets/edit.png"></a>
+                    </td>
                 </tr>
 
             </tbody>

@@ -38,7 +38,15 @@
                     <td scope="row">{{ vendor.phone }}</td>
                     <td scope="row">{{ vendor.email }}</td>
                     <td scope="row"></td>
-                    <td scope="row"></td>
+                    <td> 
+                        <a routerLink="/vendor/detail/{{ vendor.id }}">
+                        <img class="icon" src="../../../assets/detail.png"></a>
+                    </td>
+
+                    <td>
+                        <a routerLink="/vendor/edit/{{ vendor.id }}">
+                            <img class="icon" src="../../../assets/edit.png"></a>
+                    </td>
                 </tr>
 
             </tbody>

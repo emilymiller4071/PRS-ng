@@ -30,8 +30,10 @@
                     <td scope="row">{{ request.deliveryMode }}</td>
                     <td scope="row">{{ request.status }}</td>
                     <td scope="row">{{ request.total }}</td>
-                    <td scope="row"></td>
-                    <td scope="row"></td>
+                    <td> 
+                        <a routerLink="/review/detail/{{ request.id }}">
+                        <img class="icon" src="../../../assets/review.png"></a>
+                    </td>
                 </tr>
 
             </tbody>
