@@ -1,4 +1,39 @@
 <p>{{pageTitle}} works!</p>
 
-<app-menu></app-menu>
-<app-footer></app-footer>
+<head>
+    <app-menu></app-menu>
+    </head>
+    
+    <body>
+    
+        <div class="form-container">
+            <form class="form">
+    
+                <label for="dateNeeded">Date Needed :</label>
+                <input type="text" name="dateNeeded" placeholder="enter date">
+                <br>
+    
+                <label for="description">Description :</label>
+                <input type="text" name="description" placeholder="enter description">
+                <br>
+    
+                <label for="justification">Product Name :</label>
+                <input type="text" name="justification" placeholder="enter justification">
+                <br>
+    
+                <label for="deliveryMode">Vendor :</label>
+                <select name="deliveryMode">
+                    <option value="" selected>select delivery mode</option>
+                    <option>Express</option>
+                    <option>Regular</option>
+                    <option>Pick-up</option>
+                </select>
+                <br>
+    
+                <button type="save">Save</button>
+    
+            </form>
+        </div>
+    
+    <app-footer></app-footer>    
+    </body>
