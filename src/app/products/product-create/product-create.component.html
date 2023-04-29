@@ -1,4 +1,43 @@
 <p>{{pageTitle}} works!</p>
 
-<app-menu></app-menu>
-<app-footer></app-footer>
+<head>
+    <app-menu></app-menu>
+    </head>
+    
+    <body>
+    
+        <div class="form-container">
+            <form class="form">
+    
+                <label for="photoPath">Photo Link :</label>
+                <input type="text" name="photoPath" placeholder="enter url">
+                <br>
+    
+                <label for="partNbr">Part Number :</label>
+                <input type="text" name="lastName" placeholder="enter part number">
+                <br>
+    
+                <label for="name">Product Name :</label>
+                <input type="text" name="name" placeholder="enter product name">
+                <br>
+    
+                <label for="Vendor">Vendor :</label>
+                <input type="dropdown" name="Vendor" placeholder="select vendor">
+                <br>
+    
+                <label for="unit">Unit :</label>
+                <input type="text" name="unit" placeholder="enter unit">
+                <br>
+    
+                <label for="price">Price :</label>
+                <input type="text" name="price" placeholder="enter price">
+                <br>
+    
+                <button type="save">Save</button>
+    
+            </form>
+        </div>
+    
+    </body>
+    
+    <app-footer></app-footer>
