@@ -1,4 +1,30 @@
 <p>{{pageTitle}} works!</p>
 
-<app-menu></app-menu>
-<app-footer></app-footer>
+<head>
+    <app-menu></app-menu>
+    </head>
+    
+    <body>
+        <div class="card-container">
+            <div class="col-sm-6">
+                <div class="card large">
+                    <section class="section dark">
+                        <p>Photo Link : {{product.photoPath}}</p>
+                        <h3 class="strong">
+                        <strong>{{product.name}}</strong>
+                        </h3>
+                        <p>Part Number : {{product.partNbr}}</p>
+                        <p>Vendor : {{product.Vendor.name}}</p>
+                        <p>Unit : {{product.unit}}</p>
+                        <p>Price : {{product.price}}</p>
+                        <button type="edit">Edit</button>
+                        <button type="delete">Delete</button>
+                    </section>
+                </div>
+            </div>
+        </div>
+    
+    
+    
+    <app-footer></app-footer>
+    </body>
