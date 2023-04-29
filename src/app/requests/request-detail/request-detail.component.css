@@ -12,3 +12,8 @@ td, th {
 .icon {
     height: 1.2rem;
 }
+
+.lineItemsHeader {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
