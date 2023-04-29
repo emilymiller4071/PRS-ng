@@ -1,3 +1,14 @@
 label, input {
     margin: 10px;
 }
+
+td, th {
+    width: 100px;
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+}
+
+.icon {
+    height: 1.2rem;
+}
