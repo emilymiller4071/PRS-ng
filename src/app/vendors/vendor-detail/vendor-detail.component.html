@@ -1,4 +1,32 @@
 <p>{{pageTitle}} works!</p>
 
-<app-menu></app-menu>
-<app-footer></app-footer>
+<head>
+    <app-menu></app-menu>
+    </head>
+    
+    <body>
+        <div class="card-container">
+            <div class="col-sm-6">
+                <div class="card large">
+                    <section class="section dark">
+                        <h3 class="strong">
+                        <strong>{{vendor.name}}</strong>
+                        </h3>
+                        <p>Code : {{vendor.code}}</p>
+                        <p>Address : {{vendor.address}}</p>
+                        <p>City : {{vendor.city}}</p>
+                        <p>State : {{vendor.state}}</p>
+                        <p>Zip : {{vendor.zip}}</p>
+                        <p>Phone : {{vendor.phone}}</p>
+                        <p>Email : {{vendor.email}}</p>
+                        <button type="edit">Edit</button>
+                        <button type="delete">Delete</button>
+                    </section>
+                </div>
+            </div>
+        </div>
+    
+    
+    
+    <app-footer></app-footer>
+    </body>
