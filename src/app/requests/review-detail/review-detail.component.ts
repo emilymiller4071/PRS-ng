@@ -1,4 +1,6 @@
 import { Component } from "@angular/core";
+import { Request } from "src/model/request.class";
+import { User } from "src/model/user.class";
 
 @Component({
     selector: 'app-review-detail',
@@ -7,7 +9,8 @@ import { Component } from "@angular/core";
 })
 export class ReviewDetailComponent {
     pageTitle: string = "Review Detail";
-    request: any = 
+    user!: User;
+    request: Request = 
         {
             "id": 1,
             "description": "staff snacks",
@@ -19,7 +22,7 @@ export class ReviewDetailComponent {
             "status": "Review",
             "total": 45,
             "userId": 1,
-            "User": {
+            "user": {
               "id": 1,
               "userName": "emiller",
               "password": "emilyIsCool",

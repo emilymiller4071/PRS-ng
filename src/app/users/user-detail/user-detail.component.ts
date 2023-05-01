@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { User } from "src/model/user.class";
 
 @Component({
     selector: 'app-user-detail',
@@ -7,7 +8,7 @@ import { Component } from "@angular/core";
 })
 export class UserDetailComponent {
     pageTitle: string = "User Detail";
-    user: any = 
+    user: User = 
         {
             "id": 1,
             "firstName": "Emily",

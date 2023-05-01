@@ -1,4 +1,6 @@
 import { Component } from "@angular/core";
+import { Request } from "src/model/request.class";
+import { User } from "src/model/user.class";
 
 @Component({
     selector: 'app-request-review',
@@ -7,6 +9,7 @@ import { Component } from "@angular/core";
 })
 export class RequestReviewComponent {
     pageTitle: string = "Request Review";
+    users: User;
     requests: any[] = [
         {
             "id": 1,
@@ -19,7 +22,7 @@ export class RequestReviewComponent {
             "status": "Review",
             "total": 45,
             "userId": 1,
-            "User": {
+            "user": {
               "id": 1,
               "userName": "emiller",
               "password": "emilyIsCool",
@@ -42,7 +45,7 @@ export class RequestReviewComponent {
             "status": "Review",
             "total": 0,
             "userId": 3,
-            "User": {
+            "user": {
               "id": 3,
               "userName": "ahatfield",
               "password": "fieldhat23",
@@ -65,7 +68,7 @@ export class RequestReviewComponent {
             "status": "Review",
             "total": 375.78,
             "userId": 5,
-            "User": {
+            "user": {
               "id": 5,
               "userName": "jmcanley",
               "password": "JacAnley",

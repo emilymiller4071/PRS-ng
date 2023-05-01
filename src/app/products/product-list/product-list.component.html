@@ -32,7 +32,7 @@
                     <td class="cells" scope="row">{{ product.price | currency: 'USD' : 'symbol' : '0.0-2' }}</td>
                     <td class="cells" scope="row">{{ product.unit }}</td>
                     <td class="cells" scope="row">{{ product.photoPath }}</td>
-                    <td class="cells" scope="row">{{ product.Vendor.name }}</td>
+                    <td class="cells" scope="row">{{ product.vendor.name }}</td>
                     <td id="icons"> 
                         <a routerLink="/product/detail/{{ product.id }}">
                         <img class="icon" src="../../../assets/detail.png"></a>

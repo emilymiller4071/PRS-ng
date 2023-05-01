@@ -1,4 +1,6 @@
 import { Component } from "@angular/core";
+import { windowWhen } from "rxjs";
+import { Product } from "src/model/product.class";
 
 @Component({
     selector: 'app-product-detail',
@@ -7,7 +9,7 @@ import { Component } from "@angular/core";
 })
 export class ProductDetailComponent {
     pageTitle: string = "Product Detail";
-    product: any = 
+    product: Product = 
     {
         
         "id": 1,
@@ -15,9 +17,9 @@ export class ProductDetailComponent {
         "name": "uniform shoes",
         "price": 35.97,
         "unit": "per pair",
-        "photoPath": null,
-        "vendorId": 1,
-        "Vendor": {
+        "photoPath": "undefined",
+        vendorID: 1,
+        "vendor": {
             "id": 1,
             "code": "WAL",
             "name": "Walburns",
@@ -27,7 +29,7 @@ export class ProductDetailComponent {
             "zip": "41026",
             "phone": "859-221-1234",
             "email": "wallyworld@walburns.com"
+        },
         
-        }
     }
 }

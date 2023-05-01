@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Product } from "src/model/product.class";
 
 @Component({
     selector: 'app-products-list',
@@ -7,16 +8,16 @@ import { Component } from "@angular/core";
 })
 export class ProductListComponent {
     pageTitle: string = "Products List";
-    products: any[] = [
+    products: Product[] = [
         {
             "id": 1,
             "partNbr": "SHO",
             "name": "uniform shoes",
             "price": 35.97,
             "unit": "per pair",
-            "photoPath": null,
-            "vendorId": 1,
-            "Vendor": {
+            "photoPath": 'undefined',
+            "vendorID": 1,
+            "vendor": {
               "id": 1,
               "code": "WAL",
               "name": "Walburns",
@@ -34,9 +35,9 @@ export class ProductListComponent {
             "name": "uniform shirt",
             "price": 42,
             "unit": "each",
-            "photoPath": null,
-            "vendorId": 1,
-            "Vendor": {
+            "photoPath": 'undefined',
+            "vendorID": 1,
+            "vendor": {
               "id": 1,
               "code": "WAL",
               "name": "Walburns",
@@ -54,9 +55,9 @@ export class ProductListComponent {
             "name": "uniform pants",
             "price": 25.99,
             "unit": "each",
-            "photoPath": null,
-            "vendorId": 1,
-            "Vendor": {
+            "photoPath": 'undefined',
+            "vendorID": 1,
+            "vendor": {
               "id": 1,
               "code": "WAL",
               "name": "Walburns",
@@ -74,9 +75,9 @@ export class ProductListComponent {
             "name": "pencils",
             "price": 8.25,
             "unit": "unit",
-            "photoPath": null,
-            "vendorId": 2,
-            "Vendor": {
+            "photoPath": 'undefined',
+            "vendorID": 2,
+            "vendor": {
               "id": 2,
               "code": "TAR",
               "name": "Targette",
@@ -94,9 +95,9 @@ export class ProductListComponent {
             "name": "pens",
             "price": 12,
             "unit": "20 count",
-            "photoPath": null,
-            "vendorId": 2,
-            "Vendor": {
+            "photoPath": 'undefined',
+            "vendorID": 2,
+            "vendor": {
               "id": 2,
               "code": "TAR",
               "name": "Targette",
@@ -114,9 +115,9 @@ export class ProductListComponent {
             "name": "white out",
             "price": 5.45,
             "unit": "each",
-            "photoPath": null,
-            "vendorId": 2,
-            "Vendor": {
+            "photoPath": 'undefined',
+            "vendorID": 2,
+            "vendor": {
               "id": 2,
               "code": "TAR",
               "name": "Targette",
@@ -134,9 +135,9 @@ export class ProductListComponent {
             "name": "post-its",
             "price": 7.99,
             "unit": "3-pk",
-            "photoPath": null,
-            "vendorId": 2,
-            "Vendor": {
+            "photoPath": 'undefined',
+            "vendorID": 2,
+            "vendor": {
               "id": 2,
               "code": "TAR",
               "name": "Targette",
@@ -154,9 +155,9 @@ export class ProductListComponent {
             "name": "snack mix",
             "price": 4.5,
             "unit": "each",
-            "photoPath": null,
-            "vendorId": 3,
-            "Vendor": {
+            "photoPath": 'undefined',
+            "vendorID": 3,
+            "vendor": {
               "id": 3,
               "code": "MEI",
               "name": "Meiyer",
@@ -174,9 +175,9 @@ export class ProductListComponent {
             "name": "soda pop",
             "price": 9.99,
             "unit": "12-pk",
-            "photoPath": null,
-            "vendorId": 3,
-            "Vendor": {
+            "photoPath": 'undefined',
+            "vendorID": 3,
+            "vendor": {
               "id": 3,
               "code": "MEI",
               "name": "Meiyer",
@@ -194,9 +195,9 @@ export class ProductListComponent {
             "name": "chewy candy",
             "price": 20.99,
             "unit": "case",
-            "photoPath": null,
-            "vendorId": 3,
-            "Vendor": {
+            "photoPath": 'undefined',
+            "vendorID": 3,
+            "vendor": {
               "id": 3,
               "code": "MEI",
               "name": "Meiyer",

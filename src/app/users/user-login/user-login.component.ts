@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { User } from "src/model/user.class";
 
 @Component({
     selector: 'app-user-login',
@@ -7,4 +8,5 @@ import { Component } from "@angular/core";
 })
 export class UserLoginComponent {
     pageTitle: string = "User Login";
+    user!: User;
 }

@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { User } from "src/model/user.class";
 
 @Component({
     selector: 'app-user-edit',
@@ -7,7 +8,7 @@ import { Component } from "@angular/core";
 })
 export class UserEditComponent {
     pageTitle: string = "User Edit";
-    user: any = 
+    user: User = 
     {
         "id": 1,
         "firstName": "Emily",

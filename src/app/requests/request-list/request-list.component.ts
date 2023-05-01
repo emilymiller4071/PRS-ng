@@ -1,4 +1,6 @@
 import { Component } from "@angular/core";
+import { Request } from "src/model/request.class";
+import { User } from "src/model/user.class";
 
 @Component({
     selector: 'app-request-list',
@@ -7,7 +9,8 @@ import { Component } from "@angular/core";
 })
 export class RequestListComponent {
     pageTitle: string = "Request List";
-    requests: any[] = [
+    users!: User;
+    requests: Request[] = [
         {
             "id": 1,
             "description": "staff snacks",
@@ -19,7 +22,7 @@ export class RequestListComponent {
             "status": "New",
             "total": 45,
             "userId": 1,
-            "User": {
+            "user": {
               "id": 1,
               "userName": "emiller",
               "password": "emilyIsCool",
@@ -42,7 +45,7 @@ export class RequestListComponent {
             "status": "New",
             "total": 0,
             "userId": 2,
-            "User": {
+            "user": {
               "id": 2,
               "userName": "dalan",
               "password": "p@ssw0rd",
@@ -65,7 +68,7 @@ export class RequestListComponent {
             "status": "New",
             "total": 0,
             "userId": 3,
-            "User": {
+            "user": {
               "id": 3,
               "userName": "ahatfield",
               "password": "fieldhat23",
@@ -88,7 +91,7 @@ export class RequestListComponent {
             "status": "New",
             "total": 0,
             "userId": 4,
-            "User": {
+            "user": {
               "id": 4,
               "userName": "caseycakes",
               "password": "secretcode",
@@ -111,7 +114,7 @@ export class RequestListComponent {
             "status": "New",
             "total": 0,
             "userId": 5,
-            "User": {
+            "user": {
               "id": 5,
               "userName": "jmcanley",
               "password": "JacAnley",
@@ -134,7 +137,7 @@ export class RequestListComponent {
             "status": "New",
             "total": 0,
             "userId": 6,
-            "User": {
+            "user": {
               "id": 6,
               "userName": "tmcdaniel",
               "password": "mCted1985",
@@ -157,7 +160,7 @@ export class RequestListComponent {
             "status": "New",
             "total": 0,
             "userId": 7,
-            "User": {
+            "user": {
               "id": 7,
               "userName": "tferguson",
               "password": "fergie",
@@ -180,7 +183,7 @@ export class RequestListComponent {
             "status": "New",
             "total": 0,
             "userId": 8,
-            "User": {
+            "user": {
               "id": 8,
               "userName": "iokafor",
               "password": "OkaIke",
@@ -203,7 +206,7 @@ export class RequestListComponent {
             "status": "New",
             "total": 0,
             "userId": 9,
-            "User": {
+            "user": {
               "id": 9,
               "userName": "msmith",
               "password": "justLikeMike",
@@ -226,7 +229,7 @@ export class RequestListComponent {
             "status": "New",
             "total": 0,
             "userId": 10,
-            "User": {
+            "user": {
               "id": 10,
               "userName": "speterson",
               "password": "stevpet",
@@ -249,7 +252,7 @@ export class RequestListComponent {
             "status": "New",
             "total": 0,
             "userId": 11,
-            "User": {
+            "user": {
               "id": 11,
               "userName": "kmatthey",
               "password": "Mattait",
@@ -272,7 +275,7 @@ export class RequestListComponent {
             "status": "New",
             "total": 0,
             "userId": 12,
-            "User": {
+            "user": {
               "id": 12,
               "userName": "nlaw",
               "password": "lawnick",
@@ -295,7 +298,7 @@ export class RequestListComponent {
             "status": "New",
             "total": 0,
             "userId": 13,
-            "User": {
+            "user": {
               "id": 13,
               "userName": "aballard",
               "password": "ballan",
@@ -318,7 +321,7 @@ export class RequestListComponent {
             "status": "New",
             "total": 0,
             "userId": 14,
-            "User": {
+            "user": {
               "id": 14,
               "userName": "kapple",
               "password": "appkel",
@@ -341,7 +344,7 @@ export class RequestListComponent {
             "status": "New",
             "total": 0,
             "userId": 15,
-            "User": {
+            "user": {
               "id": 15,
               "userName": "dbartick",
               "password": "denbar",
@@ -364,7 +367,7 @@ export class RequestListComponent {
             "status": "New",
             "total": 0,
             "userId": 16,
-            "User": {
+            "user": {
               "id": 16,
               "userName": "knewkirk",
               "password": "newkev",
@@ -387,7 +390,7 @@ export class RequestListComponent {
             "status": "New",
             "total": 0,
             "userId": 17,
-            "User": {
+            "user": {
               "id": 17,
               "userName": "kpeace",
               "password": "peakim",
@@ -410,7 +413,7 @@ export class RequestListComponent {
             "status": "New",
             "total": 0,
             "userId": 18,
-            "User": {
+            "user": {
               "id": 18,
               "userName": "arauch",
               "password": "raddison",
@@ -433,7 +436,7 @@ export class RequestListComponent {
             "status": "New",
             "total": 0,
             "userId": 19,
-            "User": {
+            "user": {
               "id": 19,
               "userName": "dalexander",
               "password": "alexandex",
@@ -456,7 +459,7 @@ export class RequestListComponent {
             "status": "New",
             "total": 0,
             "userId": 20,
-            "User": {
+            "user": {
               "id": 20,
               "userName": "jeve",
               "password": "junigirl",

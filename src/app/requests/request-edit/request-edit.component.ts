@@ -1,4 +1,6 @@
 import { Component } from "@angular/core";
+import { Request } from "src/model/request.class";
+import { User } from "src/model/user.class";
 
 @Component({
     selector: 'app-request-edit',
@@ -7,19 +9,20 @@ import { Component } from "@angular/core";
 })
 export class RequestEditComponent {
     pageTitle: string = "Request Edit";
-    request: any =
+    user!: User;
+    request: Request =
     {
         "id": 1,
         "description": "staff snacks",
         "justification": "people get hungry",
-        "rejectionReason": null,
+        "rejectionReason": 'undefined',
         "deliveryMode": "Pickup",
         "submittedDate": "2023-03-15T00:00:00",
         "dateNeeded": "2023-04-01T00:00:00",
         "status": "New",
         "total": 45,
         "userId": 1,
-        "User": {
+        "user": {
           "id": 1,
           "userName": "emiller",
           "password": "emilyIsCool",

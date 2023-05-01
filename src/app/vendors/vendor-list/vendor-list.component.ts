@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Vendor } from "src/model/vendor.class";
 
 @Component({
     selector: 'app-vendor-list',
@@ -7,7 +8,7 @@ import { Component } from "@angular/core";
 })
 export class VendorListComponent {
     pageTitle: string = "Vendors List";
-    vendors: any[] = [
+    vendors: Vendor[] = [
         {
             "id": 1,
             "code": "WAL",

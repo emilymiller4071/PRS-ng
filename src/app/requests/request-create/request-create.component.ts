@@ -1,4 +1,6 @@
 import { Component } from "@angular/core";
+import { Request } from "src/model/request.class";
+import { User } from "src/model/user.class";
 
 @Component({
     selector: 'app-request-create',
@@ -7,4 +9,6 @@ import { Component } from "@angular/core";
 })
 export class RequestCreateComponent {
     pageTitle: string = "Request Create";
+    user!: User;
+    request!: Request;
 }

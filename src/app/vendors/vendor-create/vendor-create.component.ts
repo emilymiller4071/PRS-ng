@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Vendor } from "src/model/vendor.class";
 
 @Component({
     selector: 'app-vendor-create',
@@ -7,7 +8,7 @@ import { Component } from "@angular/core";
 })
 export class VendorCreateComponent {
     pageTitle: string = "Vendor Create";
-    vendor: any = 
+    vendor: Vendor = 
     {
         "id": 2,
         "code": "TAR",
