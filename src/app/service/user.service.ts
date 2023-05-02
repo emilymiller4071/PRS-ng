@@ -12,17 +12,17 @@ export class UserService {
     constructor(private http: HttpClient) { }
 
     //getAll
-    list(): Observable<User[]> {
+    getAll(): Observable<User[]> {
         return this.http.get(this.url) as Observable<User[]>;
     }
 
     //getById
-    get(id: number): Observable<User> {
+    getById(id: number): Observable<User> {
         return this.http.get(this.url + "/" + id)as Observable<User>;
     }
 
     //create
-    save(user: User): Observable<User> {
+    create(user: User): Observable<User> {
         return this.http.post(this.url, user) as Observable<User>;
     }
 
