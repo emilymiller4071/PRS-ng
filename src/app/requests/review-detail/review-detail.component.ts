@@ -11,27 +11,26 @@ export class ReviewDetailComponent {
     pageTitle: string = "Review Detail";
     user!: User;
     request: Request = 
-        {
-            "id": 1,
-            "description": "staff snacks",
-            "justification": "people get hungry",
-            "rejectionReason": null,
-            "deliveryMode": "Pickup",
-            "submittedDate": "2023-03-15T00:00:00",
-            "dateNeeded": "2023-04-01T00:00:00",
-            "status": "Review",
-            "total": 45,
-            "userId": 1,
-            "user": {
-              "id": 1,
-              "userName": "emiller",
-              "password": "emilyIsCool",
-              "firstName": "Emily",
-              "lastName": "Miller",
-              "phone": "859-555-1234",
-              "email": "emiller@mail.com",
-              "reviewer": true,
-              "admin": true
-            }
-          }
+    {
+        "id": 16,
+        "description": "office decor",
+        "justification": "new hire needs desk",
+        "rejectionReason": null,
+        "deliveryMode": "Pickup",
+        "submittedDate": "2023-03-15T00:00:00",
+        "dateNeeded": "2023-07-22",
+        "status": "New",
+        "total": 0.0,
+        "user": {
+            "id": 16,
+            "username": "knewkirk",
+            "password": "newkev",
+            "firstName": "Kevin",
+            "lastName": "Newkirk",
+            "phone": "859-555-3435",
+            "email": "knewkirk@mail.com",
+            "isReviewer": true,
+            "isAdmin": false
+        }
+    }
 }

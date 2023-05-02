@@ -12,28 +12,26 @@ export class RequestDetailComponent {
     user!: User;
     request: Request =
     {
-        "id": 1,
-        "description": "staff snacks",
-        "justification": "people get hungry",
-        "rejectionReason": 'undefined',
+        "id": 20,
+        "description": "office decor",
+        "justification": "new uniform needed",
+        "rejectionReason": null,
         "deliveryMode": "Pickup",
         "submittedDate": "2023-03-15T00:00:00",
-        "dateNeeded": "2023-04-01T00:00:00",
+        "dateNeeded": "2023-08-15",
         "status": "New",
-        "total": 45,
-        "userId": 1,
+        "total": 0.0,
         "user": {
-          "id": 1,
-          "userName": "emiller",
-          "password": "emilyIsCool",
-          "firstName": "Emily",
-          "lastName": "Miller",
-          "phone": "859-555-1234",
-          "email": "emiller@mail.com",
-          "reviewer": true,
-          "admin": true
+            "id": 20,
+            "username": "jeve",
+            "password": "junigirl",
+            "firstName": "Juniper",
+            "lastName": "Eve",
+            "phone": "859-555-4243",
+            "email": "jeve@mail.com",
+            "isReviewer": false,
+            "isAdmin": false
         }
-      }
-
+    }
       
 }

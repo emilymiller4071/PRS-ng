@@ -9,8 +9,8 @@ import { User } from "src/model/user.class";
 })
 export class RequestReviewComponent {
     pageTitle: string = "Request Review";
-    users: User;
-    requests: any[] = [
+    users: User[];
+    requests: Request[] = [
         {
             "id": 1,
             "description": "staff snacks",
@@ -21,17 +21,16 @@ export class RequestReviewComponent {
             "dateNeeded": "2023-04-01T00:00:00",
             "status": "Review",
             "total": 45,
-            "userId": 1,
             "user": {
               "id": 1,
-              "userName": "emiller",
+              "username": "emiller",
               "password": "emilyIsCool",
               "firstName": "Emily",
               "lastName": "Miller",
               "phone": "859-555-1234",
               "email": "emiller@mail.com",
-              "reviewer": true,
-              "admin": true
+              "isReviewer": true,
+              "isAdmin": true
             }
           },
           {
@@ -44,17 +43,16 @@ export class RequestReviewComponent {
             "dateNeeded": "2023-04-06T00:00:00",
             "status": "Review",
             "total": 0,
-            "userId": 3,
             "user": {
               "id": 3,
-              "userName": "ahatfield",
+              "username": "ahatfield",
               "password": "fieldhat23",
               "firstName": "Amy",
               "lastName": "Hatfield",
               "phone": "859-555-9101",
               "email": "ahatfield@mail.com",
-              "reviewer": true,
-              "admin": false
+              "isReviewer": true,
+              "isAdmin": false
             }
           },
           {
@@ -67,17 +65,16 @@ export class RequestReviewComponent {
             "dateNeeded": "2023-04-12T00:00:00",
             "status": "Review",
             "total": 375.78,
-            "userId": 5,
             "user": {
               "id": 5,
-              "userName": "jmcanley",
+              "username": "jmcanley",
               "password": "JacAnley",
               "firstName": "Jacob",
               "lastName": "McAnley",
               "phone": "859-555-1213",
               "email": "jmcanley@mail.com",
-              "reviewer": true,
-              "admin": false
+              "isReviewer": true,
+              "isAdmin": false
             }
           }
     ];

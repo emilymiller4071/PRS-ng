@@ -6,21 +6,18 @@ export class Product {
     name: string;
     price: number;
     unit: string;
-    photoPath: string;
-    vendorID: number;
-    vendor: Vendor;
+    photoPath?: string;
+    vendor!: Vendor;
 
-    constructor(id: number, partNbr: string, name: string,
-        price: number, unit: string, photoPath: string,
-        vendorID: number,
-         vendor: Vendor, ) {
+    constructor(id: number = 0, partNbr: string = "", name: string = "",
+        price: number = 0, unit: string = "", photoPath: string = "",
+         vendor: Vendor ) {
             this.id = id;
             this.partNbr = partNbr;
             this.name = name;
             this.price = price;
             this.unit = unit;
             this.photoPath = photoPath;
-            this.vendorID = vendorID;
             this.vendor = vendor;
         }
 }

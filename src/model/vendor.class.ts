@@ -6,8 +6,8 @@ export class Vendor {
    city: string;
    state: string;
    zip: string;
-   phone: string;
-   email: string;
+   phone?: string;
+   email?: string;
    
    constructor(id: number, code: string, name: string,
     address: string, city: string, state: string,

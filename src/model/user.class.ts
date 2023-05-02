@@ -1,16 +1,16 @@
 export class User {
     id: number;
     username: string;
-    password: string;
+    password?: string;
     firstName: string;
     lastName: string;
-    phone: string;
-    email: string;
+    phone?: string;
+    email?: string;
     isReviewer: boolean;
     isAdmin: boolean;
 
-    constructor(id: number, username: string, password: string,
-        firstName: string, lastName: string, phone: string,
+    constructor(id: number = 0, username: string = "", password: string = "",
+        firstName: string = "", lastName: string = "", phone: string = "",
         email: string, isReviewer: boolean, isAdmin: boolean) {
             this.id = id;
             this.username = username;

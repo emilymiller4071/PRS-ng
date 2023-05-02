@@ -15,8 +15,7 @@ export class ProductEditComponent {
         "name": "uniform shoes",
         "price": 35.97,
         "unit": "per pair",
-        "photoPath": 'undefined',
-        "vendorID": 1,
+        "photoPath": 'null',
         "vendor": {
             "id": 1,
             "code": "WAL",

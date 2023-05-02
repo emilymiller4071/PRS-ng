@@ -4,19 +4,19 @@ export class Request {
     id: number;
     description: string;
     justification: string;
-    rejectionReason: string;
     deliveryMode: string;
-    submittedDate: Date;
-    dateNeeded: Date;
+    submittedDate: string; 
+    dateNeeded: string; 
     status: string;
     total: number;
     user: User;
+    rejectionReason?: string;
 
-    constructor(id: number, description: string,
-        justification: string, rejectionReason: string,
-        deliveryMode: string, submittedDate: Date,
-        dateNeeded: Date, status: string, total: number,
-        user: User) {
+    constructor(id: number = 0, description: string = "",
+        justification: string = "", 
+        deliveryMode: string = "", submittedDate: any = "",
+        dateNeeded: any ="", status: string = "", total: number = 0,
+        user: User, rejectionReason: string = "") {
             this.id = id;
             this.description = description;
             this.justification = justification;
