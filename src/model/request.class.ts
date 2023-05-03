@@ -9,7 +9,7 @@ export class Request {
     dateNeeded: string; 
     status: string;
     total: number;
-    user: User;
+    user!: User;
     rejectionReason?: string;
 
     constructor(id: number = 0, description: string = "",

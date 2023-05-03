@@ -16,14 +16,19 @@ export class UserLoginComponent {
         private router: Router,
         private route: ActivatedRoute) {}
 
-    ngOnInit() {
+    // ngOnInit() {
         
-        this.userService.login(this.user).subscribe{
-            (loggedInUser: User) =>
-            this.router.navigate('/home');
-        }
+    //     this.route.params.subscribe(params => 
+    //         this.username = params['username']);
+    //         this.userService.post(this.username).subscribe(jsonResponse =>
+    //             this.user = jsonResponse as User);
 
-    }    
+    //     this.userService.login(this.user).subscribe {
+    //         (loggedInUser: User) =>
+    //         this.router.navigateByUrl("");
+    //     }
+
+    // }    
 }
 // login(user: User) {
 //     this.userService.login(user).subscribe(
