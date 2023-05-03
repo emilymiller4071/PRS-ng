@@ -3,8 +3,8 @@ import { Product} from "./product.class";
 
 export class LineItem {
     id: number;
-    request: Request;
-    product: Product;
+    request!: Request;
+    product!: Product;
     quantity: number;
 
     constructor(id: number = 0, request: Request,

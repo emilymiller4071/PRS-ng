@@ -11,7 +11,7 @@ export class UserService {
 
     constructor(private http: HttpClient) { }
 
-    //getAll
+    //getAll => list
     getAll(): Observable<User[]> {
         return this.http.get(this.url) as Observable<User[]>;
     }

@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { UserService } from "src/app/service/user.service";
 import { User } from "src/model/user.class";
 
 @Component({
@@ -8,15 +9,14 @@ import { User } from "src/model/user.class";
 })
 export class UserEditComponent {
     pageTitle: string = "User Edit";
-    user: User = 
-    {
-        "id": 1,
-        "firstName": "Emily",
-        "lastName": "Miller",
-        "phone": "859-555-1234",
-        "email": "emiller@mail.com",
-        "username": "emiller",
-        "isReviewer": true,
-        "isAdmin": true
+    user!: User;
+
+    constructor(private userService: UserService) { }
+
+    ngOnInit() {
+
+        this.userService.update(this.user).subscribe(jsonResponse =>
+            this.user = jsonResponse as User);
     }
+   
 }

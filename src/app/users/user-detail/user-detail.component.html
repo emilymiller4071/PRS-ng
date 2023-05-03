@@ -21,8 +21,8 @@
                     <p>
                         <mark class="reviewer">Reviewer : {{user.isReviewer? 'yes': 'no'}}</mark>
                     </p>
-                    <button type="edit">Edit</button>
-                    <button type="delete">Delete</button>
+                    <button type="button">Edit</button>
+                    <button type="button" (click)="delete()">Delete</button>
                 </section>
             </div>
         </div>
