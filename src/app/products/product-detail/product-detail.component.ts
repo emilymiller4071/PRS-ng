@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
-import { windowWhen } from "rxjs";
 import { Product } from "src/model/product.class";
+import { ProductService } from "src/app/service/product.service";
+import { Router, ActivatedRoute } from "@angular/router";
 
 @Component({
     selector: 'app-product-detail',
@@ -9,26 +10,23 @@ import { Product } from "src/model/product.class";
 })
 export class ProductDetailComponent {
     pageTitle: string = "Product Detail";
-    product: Product = 
-    {
-        
-        "id": 1,
-        "partNbr": "SHO",
-        "name": "uniform shoes",
-        "price": 35.97,
-        "unit": "per pair",
-        "photoPath": null,
-        "vendor": {
-            "id": 1,
-            "code": "WAL",
-            "name": "Walburns",
-            "address": "1234 Walburns Lane",
-            "city": "Florence",
-            "state": "KY",
-            "zip": "41026",
-            "phone": "859-221-1234",
-            "email": "wallyworld@walburns.com"
-        }
-        
-    }
+    product!: Product;
+    id: number = 0;
+
+
+    constructor(private productService: ProductService,
+        private router: Router,
+        private route: ActivatedRoute) { }
+
+    ngOnInit() {
+        //get the id from the url
+        this.route.params.subscribe(params => this.id = params['id']);
+        this.productService.getById(this.id).subscribe(jsonResponse =>
+            this.product = jsonResponse as Product);
+    }    
+
+    delete() {
+        this.productService.delete(this.id).subscribe(jsonResponse =>
+            this.router.navigateByUrl("product/list"));
+    }    
 }

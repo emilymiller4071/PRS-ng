@@ -1,4 +1,6 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
+import { VendorService } from "src/app/service/vendor.service";
 import { Vendor } from "src/model/vendor.class";
 
 @Component({
@@ -6,18 +8,23 @@ import { Vendor } from "src/model/vendor.class";
     templateUrl: './vendor-edit.component.html',
     styleUrls: ['./vendor-edit.component.css']
 })
-export class VendorEditComponent {
+export class VendorEditComponent implements OnInit {
     pageTitle: string = "Vendor Edit";
-    vendor: Vendor = 
-    {
-        "id": 4,
-        "code": "HOB",
-        "name": "Hobby Foyer",
-        "address": "7345 Hobby Street",
-        "city": "Independence",
-        "state": "KY",
-        "zip": "41017",
-        "phone": "859-123-4567",
-        "email": "thefoyer@hobbyfoyer.com"
+    vendor!: Vendor;
+    id: number = 0;
+
+    constructor(private vendorService: VendorService,
+        private router: Router,
+        private route: ActivatedRoute) { }
+
+    ngOnInit() { 
+        this.route.params.subscribe(params => this.id = params['id']);
+        this.vendorService.getById(this.id).subscribe(jsonResponse =>
+            {this.vendor = jsonResponse as Vendor});
     }
+   update() {
+    this.vendorService.update(this.vendor).subscribe(jsonResponse => {
+        this.vendor = jsonResponse as Vendor;
+    });
+   }
 }

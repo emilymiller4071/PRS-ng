@@ -18,7 +18,7 @@
                         <p>Unit : {{product.unit}}</p>
                         <p>Price : {{product.price | currency: 'USD' : 'symbol' : '0.0-2'}}</p>
                         <button type="edit">Edit</button>
-                        <button type="delete">Delete</button>
+                        <button type="button" (click)="delete()">Delete</button>
                     </section>
                 </div>
             </div>

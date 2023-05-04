@@ -9,30 +9,30 @@
         <form class="form">
     
             <label for="code">Code :</label>
-            <input type="text" name="code" placeholder="{{vendor.code}}"><br>
+            <input type="text" name="code" [(ngModel)]="vendor.code"><br>
     
             <label for="name">Name :</label>
-            <input type="text" name="name" placeholder="{{vendor.name}}"><br>
+            <input type="text" name="name" [(ngModel)]="vendor.name"><br>
     
             <label for="address">Address :</label>
-            <input type="text" name="address" placeholder="{{vendor.address}}"><br>
+            <input type="text" name="address" [(ngModel)]="vendor.address"><br>
     
             <label for="city">City :</label>
-            <input type="text" name="city" placeholder="{{vendor.city}}"><br>
+            <input type="text" name="city" [(ngModel)]="vendor.city"><br>
     
             <label for="state">State :</label>
-            <input type="text" name="state" placeholder="{{vendor.state}}"><br>
+            <input type="text" name="state" [(ngModel)]="vendor.state"><br>
     
             <label for="zip">Zip Code :</label>
-            <input type="text" name="zip" placeholder="{{vendor.zip}}"><br>
+            <input type="text" name="zip" [(ngModel)]="vendor.zip"><br>
 
             <label for="phone">Phone :</label>
-            <input type="text" name="zip" placeholder="{{vendor.phone}}"><br>
+            <input type="text" name="phone" [(ngModel)]="vendor.phone"><br>
 
             <label for="email">Email Address :</label>
-            <input type="text" name="email" placeholder="{{vendor.email}}"><br>
+            <input type="text" name="email" [(ngModel)]="vendor.email"><br>
     
-            <button type="save">Save</button>
+            <button (click)="update()">Save</button>
     
         </form>
     </div>

@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { VendorService } from "src/app/service/vendor.service";
 import { Vendor } from "src/model/vendor.class";
 
 @Component({
@@ -8,16 +9,15 @@ import { Vendor } from "src/model/vendor.class";
 })
 export class VendorCreateComponent {
     pageTitle: string = "Vendor Create";
-    vendor: Vendor = 
-    {
-        "id": 2,
-        "code": "TAR",
-        "name": "Targette",
-        "address": "7171 Houston Avenue",
-        "city": "Florence",
-        "state": "KY",
-        "zip": "41020",
-        "phone": "859-345-6789",
-        "email": "bullseye@targette.com"
-    }
+    vendor!: Vendor;
+
+
+    constructor(private vendorService: VendorService) { }
+
+    ngOnInit() { }
+
+    create() {
+        this.vendorService.create(this.vendor).subscribe(jsonResponse =>
+            this.vendor = jsonResponse as Vendor);
+    } 
 }

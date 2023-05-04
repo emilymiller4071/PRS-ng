@@ -1,4 +1,6 @@
 import { Component } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
+import { VendorService } from "src/app/service/vendor.service";
 import { Vendor } from "src/model/vendor.class";
 
 @Component({
@@ -8,18 +10,23 @@ import { Vendor } from "src/model/vendor.class";
 })
 export class VendorDetailComponent {
     pageTitle: string = "Vendor Detail";
-    vendor: Vendor =
-    {
-    
-        "id": 4,
-        "code": "HOB",
-        "name": "Hobby Foyer",
-        "address": "7345 Hobby Street",
-        "city": "Independence",
-        "state": "KY",
-        "zip": "41017",
-        "phone": "859-123-4567",
-        "email": "thefoyer@hobbyfoyer.com"
-          
+    vendor!: Vendor;
+    id: number = 0;
+  
+
+constructor(private vendorService: VendorService,
+    private router: Router,
+    private route: ActivatedRoute) {}
+
+    ngOnInit() {
+
+        this.route.params.subscribe(params => this.id = params['id']);
+        this.vendorService.getById(this.id).subscribe(jsonResponse =>
+            this.vendor = jsonResponse as Vendor);
+    }    
+
+    delete() {
+        this.vendorService.delete(this.id).subscribe(jsonResponse =>
+            this.router.navigateByUrl("vendor/list"));
     }
 }

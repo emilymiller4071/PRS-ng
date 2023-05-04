@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { ProductService } from "src/app/service/product.service";
 import { Product } from "src/model/product.class";
 
 @Component({
@@ -8,5 +9,16 @@ import { Product } from "src/model/product.class";
 })
 export class ProductCreateComponent {
     pageTitle: string = "Product Create";
-    products!: Product;
+    product!: Product;
+
+
+    constructor(private productService: ProductService) { }
+
+    ngOnInit() { }
+    
+    
+    create() {
+        this.productService.create(this.product).subscribe(jsonResponse =>
+            this.product = jsonResponse as Product);
+    } 
 }

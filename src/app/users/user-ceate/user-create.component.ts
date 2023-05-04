@@ -15,7 +15,11 @@ export class UserCreateComponent {
     constructor(private userService: UserService) { }
 
     ngOnInit() {
+        
+    }
+
+    create() {
         this.userService.create(this.user).subscribe(jsonResponse =>
             this.user = jsonResponse as User);
-    }
+    } 
 }

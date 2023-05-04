@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { UserService } from "src/app/service/user.service";
 import { User } from "src/model/user.class";
@@ -8,7 +8,7 @@ import { User } from "src/model/user.class";
     templateUrl: './user-edit.component.html',
     styleUrls: ['./user-edit.component.css']
 })
-export class UserEditComponent {
+export class UserEditComponent implements OnInit{
     pageTitle: string = "User Edit";
     user!: User;
     id: number = 0;
@@ -22,9 +22,9 @@ export class UserEditComponent {
         this.userService.getById(this.id).subscribe(jsonResponse =>
             {this.user = jsonResponse as User});
     }
-   update() {
+    update() {
     this.userService.update(this.user).subscribe(jsonResponse => {
-        this.user = jsonResponse as User
+        this.user = jsonResponse as User;
     });
    }
 }

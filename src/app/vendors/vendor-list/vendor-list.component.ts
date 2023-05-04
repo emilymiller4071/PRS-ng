@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { VendorService } from "src/app/service/vendor.service";
 import { Vendor } from "src/model/vendor.class";
 
 @Component({
@@ -8,50 +9,17 @@ import { Vendor } from "src/model/vendor.class";
 })
 export class VendorListComponent {
     pageTitle: string = "Vendors List";
-    vendors: Vendor[] = [
-        {
-            "id": 1,
-            "code": "WAL",
-            "name": "Walburns",
-            "address": "1234 Walburns Lane",
-            "city": "Florence",
-            "state": "KY",
-            "zip": "41026",
-            "phone": "859-221-1234",
-            "email": "wallyworld@walburns.com"
-          },
-          {
-            "id": 2,
-            "code": "TAR",
-            "name": "Targette",
-            "address": "7171 Houston Avenue",
-            "city": "Florence",
-            "state": "KY",
-            "zip": "41020",
-            "phone": "859-345-6789",
-            "email": "bullseye@targette.com"
-          },
-          {
-            "id": 3,
-            "code": "MEI",
-            "name": "Meiyer",
-            "address": "555 Meiyer Drive",
-            "city": "Erlanger",
-            "state": "KY",
-            "zip": "41018",
-            "phone": "859-567-8901",
-            "email": "super@meiyer.com"
-          },
-          {
-            "id": 4,
-            "code": "HOB",
-            "name": "Hobby Foyer",
-            "address": "7345 Hobby Street",
-            "city": "Independence",
-            "state": "KY",
-            "zip": "41017",
-            "phone": "859-123-4567",
-            "email": "thefoyer@hobbyfoyer.com"
-          }
-    ];
+    vendors: Vendor[] = []
+
+    constructor(private vendorService: VendorService) {}
+
+    ngOnInit() {
+        
+      this.vendorService.getAll().subscribe(jsonResponse => {
+        this.vendors = jsonResponse as Vendor[];
+      });
+    }    
+
+
+
 }
