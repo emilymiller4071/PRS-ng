@@ -15,6 +15,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class LineItemListComponent implements OnInit{
   pageTitle: string = "Line Items List";
   lineItems: LineItem[] = [];
+  lineItem!: LineItem;
   product!: Product;
   request!: Request;
   id: number = 0;
@@ -27,9 +28,17 @@ export class LineItemListComponent implements OnInit{
 
 
     ngOnInit() {
-      // this.route.params.subscribe(params => this.id = params['id']);
-      // this.lineItemService.getById(this.id).subscribe(jsonResponse =>
-      //   this.lineItems = jsonResponse  as LineItem[]);
- 
+      this.lineItemService.getAll().subscribe(jsonResponse =>
+        this.lineItems = jsonResponse as LineItem[]);
+    }
+
+    getById() {
+      this.lineItemService.getById(this.id).subscribe(jsonResponse =>
+        this.lineItem = jsonResponse as LineItem);
+    }
+
+    delete() {
+      this.lineItemService.delete(this.id).subscribe(jsonResponse =>
+        this.lineItem = jsonResponse as LineItem);
     }
 }
