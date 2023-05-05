@@ -9,30 +9,30 @@
         <form class="form">
 
             <label for="firstName">First Name :</label>
-            <input type="text" name="firstName" placeholder="enter first name">
+            <input [(ngModel)]="user.firstName" type="text" name="firstName" placeholder="enter first name">
             <br>
 
             <label for="lastName">Last Name :</label>
-            <input type="text" name="lastName" placeholder="enter last name">
+            <input [(ngModel)]="user.lastName" type="text" name="lastName" placeholder="enter last name">
             <br>
 
             <label for="phone">Phone Number :</label>
-            <input type="text" name="phone" placeholder="enter first name">
+            <input [(ngModel)]="user.phone" type="text" name="phone" placeholder="enter first name">
             <br>
 
             <label for="email">Email Address :</label>
-            <input type="text" name="email" placeholder="enter email address">
+            <input [(ngModel)]="user.email" type="text" name="email" placeholder="enter email address">
             <br>
 
             <label for="username">Username :</label>
-            <input type="text" name="username" placeholder="enter username">
+            <input [(ngModel)]="user.username" type="text" name="username" placeholder="enter username">
             <br>
 
             <label for="password">Password :</label>
-            <input type="text" name="password" placeholder="enter password">
+            <input [(ngModel)]="user.password" type="text" name="password" placeholder="enter password">
             <br>
 
-            <button type="save">Save</button>
+            <button (click)="create()">Save</button>
 
         </form>
     </div>

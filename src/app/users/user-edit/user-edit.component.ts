@@ -10,7 +10,7 @@ import { User } from "src/model/user.class";
 })
 export class UserEditComponent implements OnInit{
     pageTitle: string = "User Edit";
-    user!: User;
+    user: User = new User();
     id: number = 0;
 
     constructor(private userService: UserService,
@@ -22,9 +22,20 @@ export class UserEditComponent implements OnInit{
         this.userService.getById(this.id).subscribe(jsonResponse =>
             {this.user = jsonResponse as User});
     }
-    update() {
-    this.userService.update(this.user).subscribe(jsonResponse => {
-        this.user = jsonResponse as User;
-    });
-   }
-}
+//     update() {
+//     this.userService.update(this.user).subscribe(jsonResponse => {
+//         this.user = jsonResponse as User;
+//     });
+//    }
+
+update() {
+    this.userService.update(this.user).subscribe(
+      (updatedUser: User) => {
+        // Update the local user object with the new values returned from the server
+        this.user = updatedUser;
+        // Redirect to user detail page with updated user object
+        this.router.navigate(['/user/detail', this.user.id]);
+      }
+    );
+  }
+}  

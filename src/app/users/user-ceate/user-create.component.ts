@@ -9,10 +9,11 @@ import { UserService } from "src/app/service/user.service";
 })
 export class UserCreateComponent {
     pageTitle: string = "User Create";
-    user!: User;
+    user: User = new User();
 
 
-    constructor(private userService: UserService) { }
+    constructor(private userService: UserService,
+        private location: Location) { }
 
     ngOnInit() {
         
@@ -21,5 +22,6 @@ export class UserCreateComponent {
     create() {
         this.userService.create(this.user).subscribe(jsonResponse =>
             this.user = jsonResponse as User);
+            this.location.back();
     } 
 }
