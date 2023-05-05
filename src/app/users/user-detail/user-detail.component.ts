@@ -25,6 +25,10 @@ export class UserDetailComponent implements OnInit{
             this.user = jsonResponse as User);
     }    
 
+    editClick() {
+        this.userService.getById(this.id).subscribe(jsonResponse =>
+            this.router.navigateByUrl(`user/edit/${this.id}`))
+    }
 
     delete() {
         this.userService.delete(this.id).subscribe(jsonResponse =>

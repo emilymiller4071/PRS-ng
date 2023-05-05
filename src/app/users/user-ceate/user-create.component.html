@@ -32,6 +32,12 @@
             <input [(ngModel)]="user.password" type="text" name="password" placeholder="enter password">
             <br>
 
+            <label for="isReviewer">Reviewer :</label>
+            <input [(ngModel)]="user.isReviewer" type="checkbox"><br>
+
+            <label for="isAdmin">Admin :</label>
+            <input [(ngModel)]="user.isAdmin" type="checkbox"><br>
+
             <button (click)="create()">Save</button>
 
         </form>

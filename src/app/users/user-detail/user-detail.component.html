@@ -21,8 +21,9 @@
                     <p>
                         <mark class="reviewer">Reviewer : {{user.isReviewer? 'yes': 'no'}}</mark>
                     </p>
-                    <button type="button">Edit</button>
+                    <button (click)="editClick()">Edit</button>
                     <button type="button" (click)="delete()">Delete</button>
+                    <button routerLink="/user/list">Back</button>
                 </section>
             </div>
         </div>

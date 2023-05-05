@@ -1,8 +1,8 @@
 <p>{{pageTitle}} works!</p>
 
-<head>
+<header>
 <app-menu></app-menu>
-</head>
+</header>
 <body>
 
 <div class="form-container">
@@ -26,7 +26,14 @@
         <label for="password">Password :</label>
         <input [(ngModel)]="user.password" type="text" name="password" ><br>
 
+        <label for="isReviewer">Reviewer :</label>
+        <input [(ngModel)]="user.isReviewer" type="checkbox" name="isReviewer"><br>
+
+        <label for="isAdmin">Admin :</label>
+        <input [(ngModel)]="user.isAdmin" type="checkbox" name="isAdmin"><br>
+
         <button (click)="update()">Save</button>
+        <button routerLink="/user/list">Back</button>
 
     </form>
 </div>

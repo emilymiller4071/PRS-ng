@@ -1,24 +1,24 @@
 <p>{{pageTitle}} works!</p>
 
-<head>
+<header>
 <app-menu></app-menu>
-</head>
+</header>
 <body>
 
 <div class="form-container">
     <form class="form">
 
         <label for="photoPath">Photo Link :</label>
-        <input type="text" name="photoPath" placeholder="{{product.photoPath}}"><br>
+        <input [(ngModel)]="product.photoPath" type="text" name="photoPath" placeholder="{{product.photoPath}}"><br>
 
         <label for="partNbr">Part Number :</label>
-        <input type="text" name="partNbr" placeholder="{{product.partNbr}}"><br>
+        <input [(ngModel)]="product.partNbr" type="text" name="partNbr" placeholder="{{product.partNbr}}"><br>
 
         <label for="name">Name :</label>
-        <input type="text" name="name" placeholder="{{product.name}}"><br>
+        <input [(ngModel)]="product.name" type="text" name="name" placeholder="{{product.name}}"><br>
 
         <label for="vendor">Vendor :</label>
-        <select name="vendor" placeholder="select vendor">
+        <select [(ngModel)]="product.vendor" name="vendor" placeholder="select vendor">
             <option value="" selected>select vendor</option>
             <option>Targette</option>
             <option>Meiyer</option>
@@ -26,12 +26,13 @@
         </select><br>
 
         <label for="unit">Unit :</label>
-        <input type="text" name="unit" placeholder="{{product.unit}}"><br>
+        <input [(ngModel)]="product.unit" type="text" name="unit" placeholder="{{product.unit}}"><br>
 
         <label for="price">Price :</label>
-        <input type="text" name="price" placeholder="{{product.price | currency: 'USD' : 'symbol' : '0.0-2'}}"><br>
+        <input [(ngModel)]="product.price" type="text" name="price" placeholder="{{product.price | currency: 'USD' : 'symbol' : '0.0-2'}}"><br>
 
-        <button type="save">Save</button>
+        <button (click)="update()">Save</button>
+        <button routerLink="product/list">Back</button>
 
     </form>
 </div>

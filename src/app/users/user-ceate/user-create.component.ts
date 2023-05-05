@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { User } from "src/model/user.class";
 import { UserService } from "src/app/service/user.service";
+import { Location } from "@angular/common";
 
 @Component({
     selector: 'app-user-create',

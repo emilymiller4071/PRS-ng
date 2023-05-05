@@ -25,6 +25,7 @@ export class VendorEditComponent implements OnInit {
    update() {
     this.vendorService.update(this.vendor).subscribe(jsonResponse => {
         this.vendor = jsonResponse as Vendor;
+        this.router.navigate(['/vendor/detail', this.vendor.id]);
     });
    }
 }

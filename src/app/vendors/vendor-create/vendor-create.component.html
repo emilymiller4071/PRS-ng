@@ -9,40 +9,41 @@
     <div class="form-container">
         <form class="form">
 
-            <label for="code">First Name :</label>
-            <input type="text" name="code" placeholder="enter code">
+            <label for="code">Store Code :</label>
+            <input [(ngModel)]="vendor.code" type="text" name="code" placeholder="enter code">
             <br>
 
-            <label for="name">Name :</label>
-            <input type="text" name="name" placeholder="enter name">
+            <label for="name">Vendor Name :</label>
+            <input [(ngModel)]="vendor.name" type="text" name="name" placeholder="enter name">
             <br>
 
             <label for="address">Address :</label>
-            <input type="text" name="address" placeholder="enter address">
+            <input [(ngModel)]="vendor.address" type="text" name="address" placeholder="enter address">
             <br>
 
             
             <label for="city">City :</label>
-            <input type="text" name="email" placeholder="enter email address">
+            <input [(ngModel)]="vendor.city" type="text" name="email" placeholder="enter email address">
             <br>
 
             <label for="state">State :</label>
-            <input type="text" name="state" placeholder="enter state">
+            <input [(ngModel)]="vendor.state" type="text" name="state" placeholder="enter state">
             <br>
 
             <label for="zip">Zip :</label>
-            <input type="text" name="zip" placeholder="enter zip code">
+            <input [(ngModel)]="vendor.zip" type="text" name="zip" placeholder="enter zip code">
             <br>
 
             <label for="phone">Phone Number :</label>
-            <input type="text" name="phone" placeholder="enter phone number">
+            <input [(ngModel)]="vendor.phone" type="text" name="phone" placeholder="enter phone number">
             <br>
 
             <label for="email">Email :</label>
-            <input type="text" name="email" placeholder="enter email">
+            <input [(ngModel)]="vendor.email" type="text" name="email" placeholder="enter email">
             <br>
 
             <button type="button" (click)="create()">Save</button>
+            <button routerLink="/vendor/list">Cancel</button>
 
         </form>
     </div>
