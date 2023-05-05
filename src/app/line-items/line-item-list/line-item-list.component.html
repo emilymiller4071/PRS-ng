@@ -14,8 +14,8 @@
                 <th class="headers" scope="col">Price</th>
                 <th class="headers" scope="col">Quantity</th>
                 <th class="headers" scope="col">Total</th>
-                <th class="iconHeaders" scope="col">Detail</th>
-                <th class="iconHeaders" scope="col">Edit</th>
+                
+                
             </tr>   
         </thead>
 
@@ -28,14 +28,20 @@
                 <td class="cells" scope="row">{{ lineItem.quantity }}</td>
                 <td class="cells" scope="row">{{ lineItem.quantity * lineItem.product.price }}</td>
                 <td id="icons"> 
-                    <a routerLink="/line-item/detail/{{ product.id }}">
+                    <a routerLink="/line-item/detail/{{ lineItem.id }}">
                     <img class="icon" src="../../../assets/detail.png"></a>
                 </td>
 
                 <td id="icons">
-                    <a routerLink="/line-item/edit/{{ product.id }}">
+                    <a routerLink="/line-item/edit/{{ lineItem.id }}">
                         <img class="icon" src="../../../assets/edit.png"></a>
                 </td>
+
+                <td id="icons">
+                    <a (click)="delete()">{{ lineItem.id }}">
+                        <img class="icon" src="../../../assets/delete.png"></a>
+                </td>
+
             </tr>
 
         </tbody>
