@@ -27,6 +27,10 @@ import { VendorCreateComponent } from './vendors/vendor-create/vendor-create.com
 import { VendorDetailComponent } from './vendors/vendor-detail/vendor-detail.component';
 import { VendorEditComponent } from './vendors/vendor-edit/vendor-edit.component';
 import { VendorListComponent } from './vendors/vendor-list/vendor-list.component';
+import { LineItemListComponent } from './line-items/line-item-list/line-item-list.component';
+import { LineItemEditComponent } from './line-items/line-item-edit/line-item-edit.component';
+import { LineItemDetailComponent } from './line-items/line-item-detail/line-item-detail.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -52,13 +56,17 @@ import { VendorListComponent } from './vendors/vendor-list/vendor-list.component
     RequestListComponent,
     RequestEditComponent,
     RequestDetailComponent,
-    RequestCreateComponent
+    RequestCreateComponent,
+    LineItemEditComponent,
+    LineItemDetailComponent,
+    LineItemListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

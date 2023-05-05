@@ -1,3 +1,47 @@
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
+import { Product } from "src/model/product.class";
+import { LineItem } from "src/model/line-item.class";
+
+
+
+@Injectable({
+    providedIn: "root"
+})
+
+export class LineItemService {
+    url: string = "http://localhost:8080/request-lines";
+    constructor(private http: HttpClient) { }
+
+    // used by product-list
+    getAll(): Observable<LineItem[]> {
+        return this.http.get(this.url) as Observable<LineItem[]>;
+    }         
+        
+    // used by product-detail    '/products/:id'
+    getById(id: number): Observable<LineItem> {
+        return this.http.get(this.url + "/" + id) as Observable<LineItem>;
+    }         
+
+    // used by product-create
+    create(lineItem: LineItem): Observable<LineItem> {
+        return this.http.post(this.url, lineItem) as Observable<LineItem>;
+    }
+
+    // used by product-edit
+    update(lineItem: LineItem): Observable<LineItem>  {
+        return this.http.put(this.url, lineItem) as Observable<LineItem>;
+    }
+
+    // used by product-detail
+    delete(id: number): Observable<LineItem> {
+        return this.http.delete(this.url + "/" + id) as Observable<LineItem>
+    }
+
+}  
+
+
 // vi. line-item
 // 1) list()
 //     a) /requestlinesforrequest/:id GET

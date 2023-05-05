@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ProductService } from "src/app/service/product.service";
 import { Product } from "src/model/product.class";
@@ -8,7 +8,7 @@ import { Product } from "src/model/product.class";
     templateUrl: './product-edit.component.html',
     styleUrls: ['./product-edit.component.css']
 })
-export class ProductEditComponent {
+export class ProductEditComponent implements OnInit{
     pageTitle: string = "Product Edit";
     product!: Product;
     id: number = 0;

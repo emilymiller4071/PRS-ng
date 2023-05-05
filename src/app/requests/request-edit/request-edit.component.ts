@@ -1,36 +1,38 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Request } from "src/model/request.class";
 import { User } from "src/model/user.class";
+import { RequestService } from "src/app/service/request.service";
+import { Router, ActivatedRoute } from "@angular/router";
 
 @Component({
     selector: 'app-request-edit',
     templateUrl: './request-edit.component.html',
     styleUrls: ['./request-edit.component.css']
 })
-export class RequestEditComponent {
+export class RequestEditComponent implements OnInit{
     pageTitle: string = "Request Edit";
     user!: User;
-    request: Request =
-    {
-        "id": 1,
-        "description": "staff snacks",
-        "justification": "people get hungry",
-        "rejectionReason": 'null',
-        "deliveryMode": "Pickup",
-        "submittedDate": "2023-03-15T00:00:00",
-        "dateNeeded": "2023-04-01T00:00:00",
-        "status": "New",
-        "total": 45,
-        "user": {
-          "id": 1,
-          "username": "emiller",
-          "password": "emilyIsCool",
-          "firstName": "Emily",
-          "lastName": "Miller",
-          "phone": "859-555-1234",
-          "email": "emiller@mail.com",
-          "isReviewer": true,
-          "isAdmin": true
-        }
-      }
+    request!: Request;
+    id: number = 0;
+
+
+    constructor(private requestService: RequestService,
+        private router: Router,
+        private route: ActivatedRoute) {}
+
+    ngOnInit(): void {
+        this.route.params.subscribe(params => this.id = params['id']);
+        this.requestService.getById(this.id).subscribe(jsonResponse =>
+            {this.request = jsonResponse as Request});
+    }    
+
+    update() {
+        this.requestService.update(this.request).subscribe(jsonResponse => {
+            this.request = jsonResponse as Request});
+       }
+
+    submitForReview() {
+        this.requestService.submitForReview(this.request).subscribe(jsonRequest =>
+            this.request = jsonRequest as Request);
+    }
 }

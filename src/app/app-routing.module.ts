@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
+import { LineItemDetailComponent } from './line-items/line-item-detail/line-item-detail.component';
+import { LineItemEditComponent } from './line-items/line-item-edit/line-item-edit.component';
+import { LineItemListComponent } from './line-items/line-item-list/line-item-list.component';
 import { ProductCreateComponent } from './products/product-create/product-create.component';
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 import { ProductEditComponent } from './products/product-edit/product-edit.component';
@@ -25,6 +28,9 @@ import { VendorListComponent } from './vendors/vendor-list/vendor-list.component
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent},
+  {path: 'line-item/detail/:id', component: LineItemDetailComponent},
+  {path: 'line-item/edit/:id', component: LineItemEditComponent},
+  {path: 'line-item/list', component: LineItemListComponent},
   {path: 'product/create', component: ProductCreateComponent},
   {path: 'product/detail/:id', component: ProductDetailComponent},
   {path: 'product/edit/:id', component: ProductEditComponent},

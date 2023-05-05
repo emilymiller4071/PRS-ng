@@ -1,6 +1,8 @@
 import { Component } from "@angular/core";
 import { Request } from "src/model/request.class";
 import { User } from "src/model/user.class";
+import { RequestService } from "src/app/service/request.service";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
     selector: 'app-review-detail',
@@ -10,27 +12,35 @@ import { User } from "src/model/user.class";
 export class ReviewDetailComponent {
     pageTitle: string = "Review Detail";
     user!: User;
-    request: Request = 
-    {
-        "id": 16,
-        "description": "office decor",
-        "justification": "new hire needs desk",
-        "rejectionReason": null,
-        "deliveryMode": "Pickup",
-        "submittedDate": "2023-03-15T00:00:00",
-        "dateNeeded": "2023-07-22",
-        "status": "New",
-        "total": 0.0,
-        "user": {
-            "id": 16,
-            "username": "knewkirk",
-            "password": "newkev",
-            "firstName": "Kevin",
-            "lastName": "Newkirk",
-            "phone": "859-555-3435",
-            "email": "knewkirk@mail.com",
-            "isReviewer": true,
-            "isAdmin": false
-        }
+    request!: Request;
+    id: number = 0;
+
+    constructor(private requestService: RequestService,
+        private router: Router,
+        private route: ActivatedRoute) { }
+
+
+    ngOnInit() {
+        this.route.params.subscribe(params => this.id = params['id']);
+        this.requestService.getById(this.id).subscribe(jsonResponse =>
+            this.request = jsonResponse as Request);
+    }  
+    
+    approve() {
+        this.requestService.approve(this.request).subscribe(jsonResponse =>
+            this.request = jsonResponse as Request);
+    }
+
+    reject() {
+        this.requestService.reject(this.request).subscribe(jsonResponse =>
+            this.request = jsonResponse as Request);
+    }
+
+    reopen() {
+        this.requestService.reopen(this.request).subscribe(jsonResponse =>
+            this.request = jsonResponse as Request);
     }
 }
+
+
+

@@ -1,10 +1,15 @@
 import { HttpClient } from "@angular/common/http";
 import { Vendor } from "src/model/vendor.class";
 import { Observable } from "rxjs";
+import { Injectable } from "@angular/core";
 
+
+@Injectable({
+    providedIn: "root"
+})
 
 export class VendorService {
-    
+
     url: string = "http://localhost:8080/vendors";
     constructor(private http: HttpClient) { }
 

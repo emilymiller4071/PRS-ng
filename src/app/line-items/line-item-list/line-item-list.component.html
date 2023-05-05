@@ -1,0 +1,48 @@
+<p>line-item-list works!</p>
+<header>
+    <app-menu></app-menu>
+</header>
+
+<body>
+
+    <table class="table">  
+        <thead>
+            <tr>
+                <th class="headers" scope="col">Part Number</th>
+                <th class="headers" scope="col">Product Description</th>
+                <th class="headers" scope="col">Vendor</th>
+                <th class="headers" scope="col">Price</th>
+                <th class="headers" scope="col">Quantity</th>
+                <th class="headers" scope="col">Total</th>
+                <th class="iconHeaders" scope="col">Detail</th>
+                <th class="iconHeaders" scope="col">Edit</th>
+            </tr>   
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let lineItem of lineItems">
+                <td class="cells" scope="row">{{ lineItem.product.partNbr }}</td>
+                <td class="cells" scope="row">{{ lineItem.product.name }}</td>
+                <td class="cells" scope="row">{{ lineItem.product.vendor.name }}</td>
+                <td class="cells" scope="row">{{ lineItem.product.price | currency: 'USD' : 'symbol' : '0.0-2' }}</td>
+                <td class="cells" scope="row">{{ lineItem.quantity }}</td>
+                <td class="cells" scope="row">{{ lineItem.quantity * lineItem.product.price }}</td>
+                <td id="icons"> 
+                    <a routerLink="/line-item/detail/{{ product.id }}">
+                    <img class="icon" src="../../../assets/detail.png"></a>
+                </td>
+
+                <td id="icons">
+                    <a routerLink="/line-item/edit/{{ product.id }}">
+                        <img class="icon" src="../../../assets/edit.png"></a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table> 
+
+
+
+
+
+</body>
