@@ -32,7 +32,7 @@
         <input [(ngModel)]="product.price" type="text" name="price" placeholder="{{product.price | currency: 'USD' : 'symbol' : '0.0-2'}}"><br>
 
         <button (click)="update()">Save</button>
-        <button routerLink="product/list">Back</button>
+        <button routerLink="/product/list">Back</button>
 
     </form>
 </div>

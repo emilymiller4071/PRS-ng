@@ -1,7 +1,7 @@
 <p>{{pageTitle}} works!</p>
-<head>
+<header>
 <app-menu></app-menu>
-</head>
+</header>
 
 <body>
 
@@ -39,6 +39,7 @@
             <input [(ngModel)]="user.isAdmin" type="checkbox"><br>
 
             <button (click)="create()">Save</button>
+            <button routerLink="/user/list">Cancel</button>
 
         </form>
     </div>

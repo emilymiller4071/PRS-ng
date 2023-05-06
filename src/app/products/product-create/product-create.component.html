@@ -1,8 +1,8 @@
 <p>{{pageTitle}} works!</p>
 
-<head>
+<header>
     <app-menu></app-menu>
-    </head>
+    </header>
     
     <body>
     
@@ -10,35 +10,33 @@
             <form class="form">
     
                 <label for="photoPath">Photo Link :</label>
-                <input type="text" name="photoPath" placeholder="enter url">
+                <input [(ngModel)]="product.photoPath" type="text" name="photoPath" placeholder="enter url">
                 <br>
     
                 <label for="partNbr">Part Number :</label>
-                <input type="text" name="partNbr" placeholder="enter part number">
+                <input [(ngModel)]="product.partNbr" type="text" name="partNbr" placeholder="enter part number">
                 <br>
     
                 <label for="name">Product Name :</label>
-                <input type="text" name="name" placeholder="enter product name">
+                <input [(ngModel)]="product.name" type="text" name="name" placeholder="enter product name">
                 <br>
     
                 <label for="vendor">Vendor :</label>
-                <select name="vendor">
+                <select [(ngModel)]="product.vendor.id" name="vendor">
                     <option value="" selected>select vendor</option>
-                    <option>Targette</option>
-                    <option>Meiyer</option>
-                    <option>Hobby Foyer</option>
-                </select>
-                <br>
-    
+                    <option *ngFor="let vendor of vendors"  [value]="vendor.id">{{ vendor.name }}</option>
+                </select><br>
+
                 <label for="unit">Unit :</label>
-                <input type="text" name="unit" placeholder="enter unit">
+                <input [(ngModel)]="product.unit" type="text" name="unit" placeholder="enter unit">
                 <br>
     
                 <label for="price">Price :</label>
-                <input type="text" name="price" placeholder="enter price">
+                <input [(ngModel)]="product.price" type="text" name="price" placeholder="enter price">
                 <br>
     
                 <button type="button" (click)="create()">Save</button>
+                <button routerLink="/product/list">Cancel</button>
     
             </form>
         </div>

@@ -17,8 +17,9 @@
                         <p>Vendor : {{product.vendor.name}}</p>
                         <p>Unit : {{product.unit}}</p>
                         <p>Price : {{product.price | currency: 'USD' : 'symbol' : '0.0-2'}}</p>
-                        <button type="edit">Edit</button>
+                        <button (click)="editClick()">Edit</button>
                         <button type="button" (click)="delete()">Delete</button>
+                        <button routerLink="/product/list">Back</button>
                     </section>
                 </div>
             </div>

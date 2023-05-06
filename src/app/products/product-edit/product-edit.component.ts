@@ -24,7 +24,8 @@ export class ProductEditComponent implements OnInit{
     }
    update() {
     this.productService.update(this.product).subscribe(jsonResponse => {
-        this.product = jsonResponse as Product
+        this.product = jsonResponse as Product;
+        this.router.navigate(['/product/detail', this.product.id]);
     });
    }
 }

@@ -11,7 +11,7 @@ export class Product {
 
     constructor(id: number = 0, partNbr: string = "", name: string = "",
         price: number = 0, unit: string = "", photoPath: string = "",
-         vendor: Vendor) {
+         vendor: Vendor = new Vendor()) {
             this.id = id;
             this.partNbr = partNbr;
             this.name = name;

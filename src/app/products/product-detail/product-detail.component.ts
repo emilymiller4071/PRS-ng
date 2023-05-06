@@ -25,6 +25,11 @@ export class ProductDetailComponent {
             this.product = jsonResponse as Product);
     }    
 
+    editClick() {
+        this.productService.getById(this.id).subscribe(jsonResponse =>
+            this.router.navigateByUrl(`user/edit/${this.id}`))
+    }
+
     delete() {
         this.productService.delete(this.id).subscribe(jsonResponse =>
             this.router.navigateByUrl("product/list"));

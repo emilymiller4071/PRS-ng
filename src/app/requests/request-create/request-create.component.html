@@ -1,6 +1,6 @@
-<head>
+<header>
     <app-menu></app-menu>
-    </head>
+    </header>
     
     <body>
     
@@ -8,19 +8,19 @@
             <form class="form">
     
                 <label for="dateNeeded">Date Needed :</label>
-                <input type="text" name="dateNeeded" placeholder="enter date">
+                <input [(ngModel)]="request.dateNeeded" type="text" name="dateNeeded" placeholder="enter date">
                 <br>
     
                 <label for="description">Description :</label>
-                <input type="text" name="description" placeholder="enter description">
+                <input [(ngModel)]="request.description" type="text" name="description" placeholder="enter description">
                 <br>
     
                 <label for="justification">Product Name :</label>
-                <input type="text" name="justification" placeholder="enter justification">
+                <input [(ngModel)]="request.justification" type="text" name="justification" placeholder="enter justification">
                 <br>
     
                 <label for="deliveryMode">Delivery Mode :</label>
-                <select name="deliveryMode">
+                <select [(ngModel)]="request.deliveryMode" name="deliveryMode">
                     <option value="" selected>select delivery mode</option>
                     <option>Express</option>
                     <option>Regular</option>
@@ -29,6 +29,7 @@
                 <br>
     
                 <button (click)="create()">Save</button>
+                <button routerLink="/request/list">Cancel</button>
     
             </form>
         </div>
