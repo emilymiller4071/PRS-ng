@@ -31,6 +31,7 @@ import { LineItemListComponent } from './line-items/line-item-list/line-item-lis
 import { LineItemEditComponent } from './line-items/line-item-edit/line-item-edit.component';
 import { LineItemDetailComponent } from './line-items/line-item-detail/line-item-detail.component';
 import { RouterModule } from '@angular/router';
+import { User } from 'src/model/user.class';
 
 @NgModule({
   declarations: [
@@ -71,4 +72,6 @@ import { RouterModule } from '@angular/router';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  
+ }

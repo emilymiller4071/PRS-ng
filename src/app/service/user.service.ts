@@ -8,8 +8,14 @@ import { Observable } from "rxjs";
 })
 export class UserService {
     url: string = "http://localhost:8080/users";
+    
+    currentUser: User;
 
     constructor(private http: HttpClient) { }
+
+    setCurrentUser(user: User) {
+        this.currentUser = user;
+    }
 
     //getAll => list
     getAll(): Observable<User[]> {

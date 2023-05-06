@@ -4,6 +4,8 @@ import { Request } from "src/model/request.class";
 import { User } from "src/model/user.class";
 import { Location } from "@angular/common";
 import { DatePipe } from '@angular/common';
+import { UserService } from "src/app/service/user.service";
+import { ActivatedRoute, Route, Router } from "@angular/router";
 
 @Component({
     selector: 'app-request-create',
@@ -15,21 +17,21 @@ export class RequestCreateComponent implements OnInit{
     user!: User;
     request: Request = new Request();
     requests: Request[];
+    id: number = 0;
 
 
 constructor(private requestService: RequestService,
-    private location: Location, private datePipe: DatePipe) { }
+    private router: Router) { }
 
     ngOnInit() {
-        this.requestService.getAll().subscribe(
-            requests => {
-              this.requests = requests;
-            })
+       
     }
+     
     create() {
-        this.request.dateNeeded = this.datePipe.transform(this.request.dateNeeded, 'yyyy-MM-dd');
+        this.request.user.id = 1;
+        // this.request.user.id = this.user.id;
         this.requestService.create(this.request).subscribe(jsonResponse =>
             this.request = jsonResponse as Request);
-            this.location.back();
+            this.router.navigateByUrl("/request/list");
+        }
     }
-}

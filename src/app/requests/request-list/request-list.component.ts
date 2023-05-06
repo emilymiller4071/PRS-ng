@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { RequestService } from "src/app/service/request.service";
 import { Request } from "src/model/request.class";
+import { Router, ActivatedRoute } from "@angular/router";
 
 @Component({
     selector: 'app-request-list',
@@ -12,13 +13,15 @@ export class RequestListComponent implements OnInit{
     requests: Request[] = [];
 
 
-    constructor(private requestService: RequestService) { }
+    constructor(private requestService: RequestService,
+        private router: Router,
+        private route: ActivatedRoute) { }
 
 
     ngOnInit() {
         this.requestService.getAll().subscribe(jsonResponse => {
             this.requests = jsonResponse as Request[];
         });
-        
+     
     }
 }

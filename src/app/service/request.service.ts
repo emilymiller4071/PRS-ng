@@ -25,7 +25,10 @@ export class RequestService {
 
     // used by request-create
     create(request: Request): Observable<Request> {
+        console.log("Date Needed: " + request.dateNeeded);
+        console.log(request);
         return this.http.post(this.url, request) as Observable<Request>;
+         
     }
 
     // used by request-edit
