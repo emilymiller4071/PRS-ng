@@ -39,6 +39,11 @@ export class LineItemService {
         return this.http.delete(this.url + "/" + id) as Observable<LineItem>
     }
 
+    getFormattedTotal(lineItem: LineItem): string {
+        const total = lineItem.quantity * lineItem.product.price;
+        return total.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+      }
+
 }  
 
 

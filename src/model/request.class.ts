@@ -16,7 +16,7 @@ export class Request {
         justification: string = "", 
         deliveryMode: string = "", submittedDate: string = "",
         dateNeeded: string ="", status: string = "", total: number = 0,
-        user: User, rejectionReason: string = "") {
+        user: User = new User(), rejectionReason: string = "") {
             this.id = id;
             this.description = description;
             this.justification = justification;

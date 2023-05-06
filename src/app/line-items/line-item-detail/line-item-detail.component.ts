@@ -35,4 +35,10 @@ delete() {
     this.lineItemService.delete(this.id).subscribe(jsonResponse =>
         this.router.navigateByUrl("line-item/list"));
 } 
+
+getFormattedTotal(): string {
+  const total = this.lineItem.quantity * this.lineItem.product.price;
+  return total.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+}
+
 }

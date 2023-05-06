@@ -26,7 +26,8 @@
                 <td class="cells" scope="row">{{ lineItem.product.vendor.name }}</td>
                 <td class="cells" scope="row">{{ lineItem.product.price | currency: 'USD' : 'symbol' : '0.0-2' }}</td>
                 <td class="cells" scope="row">{{ lineItem.quantity }}</td>
-                <td class="cells" scope="row">{{ lineItem.quantity * lineItem.product.price }}</td>
+                <!-- <td class="cells" scope="row">{{ lineItem.quantity * lineItem.product.price }}</td> -->
+                <td class="cells" scope="row">{{ getFormattedTotal() }}</td>
                 <td id="icons"> 
                     <a routerLink="/line-item/detail/{{ lineItem.id }}">
                     <img class="icon" src="../../../assets/detail.png"></a>
@@ -38,8 +39,9 @@
                 </td>
 
                 <td id="icons">
-                    <a (click)="delete()">{{ lineItem.id }}">
-                        <img class="icon" src="../../../assets/delete.png"></a>
+                    <a (click)="delete()">
+                        <img class="icon" src="../../../assets/delete.png">
+                    </a>
                 </td>
 
             </tr>
