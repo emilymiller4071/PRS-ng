@@ -10,29 +10,29 @@ import { Router, ActivatedRoute } from "@angular/router";
 })
 export class UserLoginComponent {
     pageTitle: string = "User Login";
-    user!: User;
+    user: User = new User;
+    loggedInUser = new User;
+    validLogin: boolean = true;
 
     constructor(private userService: UserService,
         private router: Router,
         private route: ActivatedRoute) {}
 
-    // ngOnInit() {
-        
-    //     this.route.params.subscribe(params => 
-    //         this.username = params['username']);
-    //         this.userService.post(this.username).subscribe(jsonResponse =>
-    //             this.user = jsonResponse as User);
+     ngOnInit() {
 
-    //     this.userService.login(this.user).subscribe {
-    //         (loggedInUser: User) =>
-    //         this.router.navigateByUrl("");
-    //     }
+      }  
 
-    // }    
+      login() {
+
+        this.userService.login(this.user).subscribe(jsonResponse =>
+            this.loggedInUser = jsonResponse as User);
+
+            console.log(this.loggedInUser.username);
+            if (this.loggedInUser.username != "") {
+                localStorage.setItem('currentUser', JSON.stringify(this.user));
+                this.router.navigateByUrl('/home');
+            } else {
+                this.validLogin = false;
+            }
+    }
 }
-// login(user: User) {
-//     this.userService.login(user).subscribe(
-//       (loggedInUser: User) => {
-//         // Redirect to home page upon successful login
-//         this.router.navigate(['/home']);
-//       }

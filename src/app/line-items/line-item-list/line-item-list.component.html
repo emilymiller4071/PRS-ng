@@ -25,13 +25,14 @@
                 <td class="cells" scope="row">{{ lineItem.quantity }}</td>
                 <!-- <td class="cells" scope="row">{{ lineItem.quantity * lineItem.product.price }}</td> -->
                 <td class="cells" scope="row">{{ getFormattedTotal() }}</td>
+                
                 <td id="icons"> 
-                    <a routerLink="/line-item/detail/{{ lineItem.id }}">
+                    <a routerLink="/line-item/detail/{{lineItem.id}}">
                     <img class="icon" src="../../../assets/detail.png"></a>
                 </td>
 
                 <td id="icons">
-                    <a routerLink="/line-item/edit/{{ lineItem.id }}">
+                    <a routerLink="/line-item/edit/{{lineItem.id}}">
                         <img class="icon" src="../../../assets/edit.png"></a>
                 </td>
 
@@ -46,8 +47,8 @@
         </tbody>
     </table> 
 
-
-
+<app-line-item-detail></app-line-item-detail>
+<app-line-item-edit></app-line-item-edit>
 
 
 </body>

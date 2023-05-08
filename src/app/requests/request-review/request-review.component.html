@@ -4,39 +4,25 @@
     <div class="card-body">
         <h5 class="card-title">{{ pageTitle }}</h5>
         <table class="table">  
-            <thead>
-
-                <tr>
-                    <th scope="col">Description</th>
-                    <th scope="col">Justification</th>
-                    <th scope="col">Submitted Date</th>
-                    <th scope="col">Date Needed</th>
-                    <th scope="col">Delivery Mode</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Total</th>
-                    <th scope="col">Review Request</th>
-                </tr> 
-
-            </thead>
-
+            
             <tbody>
-
-                <tr *ngFor="let request of requests">
-                    <td scope="row">{{ request.description }}</td>
-                    <td scope="row">{{ request.justification }}</td>
-                    <td scope="row">{{ request.submittedDate }}</td>
-                    <td scope="row">{{ request.dateNeeded }}</td>
-                    <td scope="row">{{ request.deliveryMode }}</td>
-                    <td scope="row">{{ request.status }}</td>
-                    <td scope="row">{{ request.total }}</td>
-                    <td> 
-                        <a routerLink="/review/detail/{{ request.id }}">
-                        <img class="icon" src="../../../assets/review.png"></a>
-                    </td>
-                </tr>
-
+                <tr *ngFor="let request of requests"></tr>
+                <tr scope="row">{{ request.submittedDate }}</tr>
+                <tr scope="row">{{ request.dateNeeded }}</tr>
+                <tr scope="row">{{request.user.username}}</tr>
+                <tr scope="row">{{ request.description }}</tr>
+                <tr scope="row">{{ request.justification }}</tr>
+                <tr scope="row">{{ request.deliveryMode }}</tr>
+                <tr scope="row">{{ request.status }}</tr>
             </tbody>
-        </table> 
+
+        </table>   
+
+            <app-line-item-list></app-line-item-list>
+
+            <button routerLink="/line-item/review/{{request.id}}"></button>
+         
+         
     </div>
 </div>
 

@@ -3,28 +3,29 @@
 <head>
 <app-menu></app-menu>
 </head>
+
 <body>
 
 <div class="form-container">
     <form class="form">
 
         <label for="submittedDate">Submitted Date :</label>
-        <input type="text" name="submittedDate" placeholder="{{request.submittedDate | date}}"><br>
+        <input [(ngModel)]="request.submittedDate" type="text" name="submittedDate" placeholder="{{request.submittedDate | date}}"><br>
 
         <label for="dateNeeded">Date Needed :</label>
-        <input type="text" name="dateNeeded" placeholder="{{request.dateNeeded | date}}"><br>
+        <input [(ngModel)]="request.dateNeeded" type="text" name="dateNeeded" placeholder="{{request.dateNeeded | date}}"><br>
 
         <label for="username">Username :</label>
-        <input type="text" name="username" placeholder="{{request.user.username}}"><br>
+        <input [(ngModel)]="request.user.username" type="text" name="username" placeholder="{{request.user.username}}"><br>
 
         <label for="description">Description :</label>
-        <input type="text" name="description" placeholder="{{request.description}}"><br>
+        <input [(ngModel)]="request.description" type="text" name="description" placeholder="{{request.description}}"><br>
 
         <label for="justification">Justification :</label>
-        <input type="text" name="justification" placeholder="{{request.justification}}"><br>
+        <input [(ngModel)]="request.justification" type="text" name="justification" placeholder="{{request.justification}}"><br>
 
         <label for="deliveryMode">Delivery Mode :</label>
-        <select name="deliveryMode">
+        <select [(ngModel)]="request.deliveryMode" name="deliveryMode">
             <option value="" selected>select delivery mode</option>
             <option>Express</option>
             <option>Regular</option>
@@ -33,51 +34,17 @@
         <br>
         
         <label for="status">Status :</label>
-        <input type="text" name="status" placeholder="{{request.status}}"><br>
+        <input [(ngModel)]="request.status" type="text" name="status" placeholder="{{request.status}}"><br>
 
         <label for="rejectionReason">Reason for Rejection :</label>
-        <input type="text" name="rejectionReason" placeholder="{{request.rejectionReason}}"><br>
+        <input [(ngModel)]="request.rejectionReason" type="text" name="rejectionReason" placeholder="{{request.rejectionReason}}"><br>
 
-        <table class="table">  
-            <thead>
 
-                <tr>
-                    <th scope="col">Part Number</th>
-                    <th scope="col">Product Description</th>
-                    <th scope="col">Vendor</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Quantity</th>
-                    <th scope="col">Total</th>
-                    <th scope="col">Edit</th>
-                    <th scope="col">Delete</th>
-                </tr> 
+        <app-line-item-list></app-line-item-list>
 
-            </thead>
-
-            <tbody>
-
-                
-                <tr>
-                    <td scope="row"> </td>
-                    <td scope="row"> </td>
-                    <td scope="row"> </td>
-                    <td scope="row"> </td>
-                    <td scope="row"> </td>
-                    <td scope="row"> </td>                                 
-                    <td>
-                        <a routerLink="/request/edit/{{ request.id }}">
-                            <img class="icon" src="../../../assets/edit.png"></a>
-                    </td>
-                    <td> 
-                        <a routerLink="">
-                        <img class="icon" src="../../../assets/delete.png"></a>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table> 
-
-        <button type="save">Save</button>
+        <button >Save</button>
 
     </form>
 </div>
+
+</body>

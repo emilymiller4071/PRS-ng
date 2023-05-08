@@ -14,12 +14,79 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class LineItemListComponent implements OnInit{
   pageTitle: string = "Line Items List";
-  lineItems: LineItem[] = [];
- 
-  
+  lineItems: LineItem[] = [
+    {
+      "id": 1,
+      "request": null,
+      "product": {
+          "id": 8,
+          "partNbr": "SNCK",
+          "name": "snack mix",
+          "price": 4.5,
+          "unit": "each",
+          "photoPath": null,
+          "vendor": {
+              "id": 3,
+              "code": "MEI",
+              "name": "Meiyer",
+              "address": "555 Meiyer Drive",
+              "city": "Erlanger",
+              "state": "KY",
+              "zip": "41018",
+              "phone": "859-567-8901",
+              "email": "super@meiyer.com"
+          }
+      },
+      "quantity": 100
+  },
+  {
+      "id": 2,
+      "request": {
+          "id": 2,
+          "description": "staff snacks",
+          "justification": "people get hungry",
+          "rejectionReason": null,
+          "deliveryMode": "Pickup",
+          "submittedDate": "2023-05-04T00:00:00",
+          "dateNeeded": "2023-04-05",
+          "status": "Approved",
+          "total": 1998.0,
+          "user": {
+              "id": 2,
+              "username": "dalan",
+              "password": "p@ssw0rd",
+              "firstName": "Dustin",
+              "lastName": "Alan",
+              "phone": "859-555-5678",
+              "email": "dustin@mail.com",
+              "isReviewer": true,
+              "isAdmin": true
+          }
+      },
+      "product": {
+          "id": 9,
+          "partNbr": "SODA",
+          "name": "soda pop",
+          "price": 9.99,
+          "unit": "12-pk",
+          "photoPath": null,
+          "vendor": {
+              "id": 3,
+              "code": "MEI",
+              "name": "Meiyer",
+              "address": "555 Meiyer Drive",
+              "city": "Erlanger",
+              "state": "KY",
+              "zip": "41018",
+              "phone": "859-567-8901",
+              "email": "super@meiyer.com"
+          }
+      },
+      "quantity": 200
+  }
+  ];
   lineItem!: LineItem;
   product!: Product;
-  request!: Request;
   id: number = 0;
 
   constructor(private lineItemService: LineItemService,
@@ -30,8 +97,10 @@ export class LineItemListComponent implements OnInit{
 
 
     ngOnInit() {
-      this.lineItemService.getAll().subscribe(jsonResponse =>
-        this.lineItems = jsonResponse as LineItem[]);
+      this.route.params.subscribe(params => this.id = params['id']);
+      this.lineItemService.getByRequestId(this.id).subscribe(
+        jsonResponse => this.lineItems = jsonResponse as LineItem[]);
+      
     }
 
     getById() {

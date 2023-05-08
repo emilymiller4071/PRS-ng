@@ -31,7 +31,7 @@
                     <td class="cells" scope="row">{{ product.name }}</td>
                     <td class="cells" scope="row">{{ product.price | currency: 'USD' : 'symbol' : '0.0-2' }}</td>
                     <td class="cells" scope="row">{{ product.unit }}</td>
-                    <td class="cells" scope="row">{{ product.photoPath }}</td>
+                    <td class="cells" scope="row"><img src="../../../assets/shoe.png"></td>
                     <td class="cells" scope="row">{{ product.vendor.name }}</td>
                     <td id="icons"> 
                         <a routerLink="/product/detail/{{ product.id }}">

@@ -9,10 +9,10 @@ import { Router, ActivatedRoute } from "@angular/router";
     templateUrl: './request-edit.component.html',
     styleUrls: ['./request-edit.component.css']
 })
-export class RequestEditComponent implements OnInit{
+export class RequestEditComponent{
     pageTitle: string = "Request Edit";
     user!: User;
-    request!: Request;
+    request: Request = new Request();
     id: number = 0;
 
 

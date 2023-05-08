@@ -5,10 +5,14 @@
 <body>
 
 <label for="username">Username :</label>
-<input type="text" name="username" placeholder="username"><br>
+<input [(ngModel)]="user.username" type="text" name="username" placeholder="username"><br>
 
 <label for="password">Password :</label>
-<input type="text" name="password" placeholder="password"><br>
+<input [(ngModel)]="user.password" type="text" name="password" placeholder="password"><br>
+
+<p *ngIf="!validLogin" style="color: red">May be short and stout...</p>
+
+<button (click)="login()">Login</button>
 
 <app-footer></app-footer>
 </body>

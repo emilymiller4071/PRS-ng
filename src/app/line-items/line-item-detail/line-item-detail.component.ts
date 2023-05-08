@@ -12,7 +12,7 @@ import { ProductService } from 'src/app/service/product.service';
   styleUrls: ['./line-item-detail.component.css']
 })
 export class LineItemDetailComponent {
-  lineItems: LineItem[];
+  lineItems: LineItem[] = [];
   lineItem: LineItem;
   id: number = 0;
   product: Product;

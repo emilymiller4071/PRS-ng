@@ -17,41 +17,13 @@
                     <p>Reason For Rejection : {{request.rejectionReason}}</p>
                     <p class="lineItemsHeader">List of Line Items :</p>
 
-                    <table class="table">  
-                        <thead>
-            
-                            <tr>
-                                <th scope="col">Part Number</th>
-                                <th scope="col">Product Description</th>
-                                <th scope="col">Vendor</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Quantity</th>
-                                <th scope="col">Total</th>
-                            </tr> 
-            
-                        </thead>
-            
-                        <tbody>
-            
-                            
-                            <tr>
-                                <td scope="row"> </td>
-                                <td scope="row"> </td>
-                                <td scope="row"> </td>
-                                <td scope="row"> </td>
-                                <td scope="row"> </td>
-                                <td scope="row"> </td>                                 
-                            </tr>
-            
-                        </tbody>
-
-                    </table> 
+                    <app-line-item-list></app-line-item-list>
 
                     <label for="rejectionReason">Reason for Rejection :</label><br>
-                    <textarea type="text" class="rejectBox" name="rejectionReason" placeholder="enter reason for rejection"></textarea><br>
+                    <textarea [(ngModel)]="request.rejectionReason" type="text" class="rejectBox" name="rejectionReason" placeholder="enter reason for rejection"></textarea><br>
 
-                    <button type="approve">Approve</button>
-                    <button type="reject">Reject</button>
+                    <button (click)="approve()">Approve</button>
+                    <button (click)="reject()">Reject</button>
                 </section>
             </div>
         </div>

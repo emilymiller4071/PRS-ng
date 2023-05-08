@@ -12,6 +12,7 @@ import { User } from "src/model/user.class";
 export class RequestReviewComponent {
     pageTitle: string = "Request Review";
     users: User[];
+    request: Request = new Request();
     requests: Request[] = [];
     status: "";
     userId: number = 0;
@@ -22,7 +23,7 @@ export class RequestReviewComponent {
 
 
     ngOnInit() {
-        this.route.params.subscribe(params => this.userId = params['userId']);
+        // this.route.params.subscribe(params => this.userId = params['userId']);
         this.requestService.getAllForReview(this.userId).subscribe(jsonResponse =>
             this.requests = jsonResponse as Request[]);
     }    

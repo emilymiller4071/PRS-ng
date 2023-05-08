@@ -14,9 +14,9 @@ export class LineItemService {
     url: string = "http://localhost:8080/request-lines";
     constructor(private http: HttpClient) { }
 
-    // used by line-item-list
-    getAll(): Observable<LineItem[]> {
-        return this.http.get(this.url) as Observable<LineItem[]>;
+    // used by line-item-list, line-item-
+    getByRequestId(id: number): Observable<LineItem[]> {
+        return this.http.get(this.url + "/review/" + id) as Observable<LineItem[]>;
     }         
         
     // used by line-item-detail    '/line-item/:id'
@@ -44,11 +44,12 @@ export class LineItemService {
         return total.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
       }
 
+
 }  
 
 
 // vi. line-item
-// 1) list()
+// 1) getByRequestId()
 //     a) /requestlinesforrequest/:id GET
 //     b) used by request-detail, request-edit, and review-detail
 // 2) get()
@@ -56,15 +57,15 @@ export class LineItemService {
 //     b) used by line-item-detail
 //         a) We have not created this yet
 // 3) save()
-//     a) /requestlines POST
+//     a) /request-lines POST
 //     b) used by line-item-create
 //         a) We have not created this yet
 // 4) update()
-//     a) /requestlines/:id PUT
+//     a) /request-lines/:id PUT
 //     b) used by line-item-edit
 //         a) We have not created this yet
 // 5) delete()
-//     a) /requestlines/:id DELETE
+//     a) /request-lines/:id DELETE
 //     b) in html click of the button should call delete()
 //     c) used by line-item-edit and line-item-list
 //         a) We have not created these yet

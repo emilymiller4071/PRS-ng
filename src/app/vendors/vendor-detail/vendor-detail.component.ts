@@ -29,4 +29,11 @@ constructor(private vendorService: VendorService,
         this.vendorService.delete(this.id).subscribe(jsonResponse =>
             this.router.navigateByUrl("vendor/list"));
     }
+
+    update() {
+        this.vendorService.update(this.vendor).subscribe(jsonResponse => {
+            this.vendor = jsonResponse as Vendor;
+            this.router.navigate(['/vendor/detail', this.vendor.id]);
+        });
+       }
 }
