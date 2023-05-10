@@ -6,6 +6,7 @@ import { Location } from "@angular/common";
 import { DatePipe } from '@angular/common';
 import { UserService } from "src/app/service/user.service";
 import { ActivatedRoute, Route, Router } from "@angular/router";
+import { Product } from "src/model/product.class";
 
 @Component({
     selector: 'app-request-create',
@@ -18,6 +19,7 @@ export class RequestCreateComponent implements OnInit{
     request: Request = new Request();
     requests: Request[];
     id: number = 0;
+    product: Product = new Product();
 
 
 constructor(private requestService: RequestService,

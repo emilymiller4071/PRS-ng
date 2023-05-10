@@ -5,7 +5,7 @@ export class Request {
     description: string;
     justification: string;
     deliveryMode: string;
-    submittedDate?: string; 
+    submittedDate: string; 
     dateNeeded: string; 
     status: string;
     total: number;

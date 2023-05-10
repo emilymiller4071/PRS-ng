@@ -11,6 +11,9 @@
                 <th class="headers" scope="col">Price</th>
                 <th class="headers" scope="col">Quantity</th>
                 <th class="headers" scope="col">Total</th>
+                <th class="headers" scope="col"></th>
+                <th class="headers" scope="col"></th>
+                <th class="headers" scope="col"></th>
                 
                 
             </tr>   
@@ -18,13 +21,13 @@
 
         <tbody>
             <tr *ngFor="let lineItem of lineItems">
-                <td class="cells" scope="row">{{ lineItem.product.partNbr }}</td>
-                <td class="cells" scope="row">{{ lineItem.product.name }}</td>
-                <td class="cells" scope="row">{{ lineItem.product.vendor.name }}</td>
-                <td class="cells" scope="row">{{ lineItem.product.price | currency: 'USD' : 'symbol' : '0.0-2' }}</td>
-                <td class="cells" scope="row">{{ lineItem.quantity }}</td>
-                <!-- <td class="cells" scope="row">{{ lineItem.quantity * lineItem.product.price }}</td> -->
-                <td class="cells" scope="row">{{ getFormattedTotal() }}</td>
+                <td class="cells" scope="row" name="lineItem.product.partNbr">{{ lineItem.product.partNbr }}</td>
+                <td class="cells" scope="row" name="lineItem.product.name">{{ lineItem.product.name }}</td>
+                <td class="cells" scope="row" name="lineItem.product.vendor.name">{{ lineItem.product.vendor.name }}</td>
+                <td class="cells" scope="row" name="lineItem.product.price">{{ lineItem.product.price | currency: 'USD' : 'symbol' : '0.0-2' }}</td>
+                <td class="cells" scope="row" name="lineItem.quantity">{{ lineItem.quantity }}</td>
+                <td class="cells" scope="row" name="total">{{ lineItem.quantity * lineItem.product.price | currency: 'USD' : 'symbol' : '0.0-2'}}</td>
+                <!-- <td class="cells" scope="row">{{ getFormattedTotal() }}</td> -->
                 
                 <td id="icons"> 
                     <a routerLink="/line-item/detail/{{lineItem.id}}">
@@ -37,18 +40,29 @@
                 </td>
 
                 <td id="icons">
+                    <a routerLink="`line-item/delete/{{lineItem.id}}">
                     <a (click)="delete()">
                         <img class="icon" src="../../../assets/delete.png">
                     </a>
+                </a>
                 </td>
 
             </tr>
 
         </tbody>
     </table> 
+<div class="form-group">
+    <label for="product">Add a Product :</label>
+    <select class="form-control" id="product" name="product"
+     [(ngModel)]="lineItem.product.id">
+        <option value="" selected>select product</option>
+        <option *ngFor="let product of products" [value]="product.id">{{product.name}}</option>
+    </select>
+    <br>
+</div>
+    <label for="quantity">Quantity :</label>
+    <input [(ngModel)]="lineItem.quantity" type="text" name="quantity"><br>
 
-<app-line-item-detail></app-line-item-detail>
-<app-line-item-edit></app-line-item-edit>
-
+    <button (click)="create()">Add Item To List</button>
 
 </body>

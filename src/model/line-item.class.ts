@@ -7,8 +7,8 @@ export class LineItem {
     product!: Product;
     quantity: number;
 
-    constructor(id: number = 0, request: Request,
-        product: Product, quantity: number = 1) {
+    constructor(id: number = null, request: Request = new Request(),
+        product: Product = new Product(), quantity: number = 1) {
             this.id = id;
             this.request = request;
             this.product = product;

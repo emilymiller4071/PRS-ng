@@ -10,7 +10,7 @@ import { Vendor } from "src/model/vendor.class";
 })
 export class VendorDetailComponent {
     pageTitle: string = "Vendor Detail";
-    vendor!: Vendor;
+    vendor: Vendor = new Vendor();
     id: number = 0;
   
 

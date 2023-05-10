@@ -10,7 +10,7 @@ import { Vendor } from "src/model/vendor.class";
 })
 export class VendorEditComponent implements OnInit {
     pageTitle: string = "Vendor Edit";
-    vendor!: Vendor;
+    vendor: Vendor = new Vendor();
     id: number = 0;
 
     constructor(private vendorService: VendorService,

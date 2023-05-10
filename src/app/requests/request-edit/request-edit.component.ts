@@ -4,6 +4,7 @@ import { User } from "src/model/user.class";
 import { RequestService } from "src/app/service/request.service";
 import { Router, ActivatedRoute } from "@angular/router";
 
+
 @Component({
     selector: 'app-request-edit',
     templateUrl: './request-edit.component.html',
@@ -29,6 +30,7 @@ export class RequestEditComponent{
     update() {
         this.requestService.update(this.request).subscribe(jsonResponse => {
             this.request = jsonResponse as Request});
+        this.router.navigateByUrl(`request/detail/${this.id}`);
        }
 
     submitForReview() {

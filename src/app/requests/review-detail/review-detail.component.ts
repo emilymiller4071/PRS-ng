@@ -40,7 +40,12 @@ export class ReviewDetailComponent {
         this.requestService.reopen(this.request).subscribe(jsonResponse =>
             this.request = jsonResponse as Request);
     }
-}
 
+    public submitForReview() {
+        this.requestService.submitForReview(this.request).subscribe(jsonResponse =>
+            this.request = jsonResponse as Request);
+    }
+
+}
 
 

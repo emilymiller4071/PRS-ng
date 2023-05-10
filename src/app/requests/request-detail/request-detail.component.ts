@@ -14,7 +14,7 @@ import { User } from "src/model/user.class";
 export class RequestDetailComponent {
     pageTitle: string = "Request Detail";
     user!: User;
-    request!: Request;
+    request: Request = new Request();
     lineItems: LineItem[] = [];
     id: number = 0;
 

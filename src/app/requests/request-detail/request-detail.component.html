@@ -9,7 +9,7 @@
             <div class="col-sm-6">
                 <div class="card large">
                     <section class="section dark">
-                        <p>Submitted Date : {{request.submittedDate | date}}</p>
+                        <p name="request.submittedDate">Submitted Date : {{request.submittedDate | date}}</p>
                         <p>Date Needed : {{request.dateNeeded | date}}</p>
                         <p>Person Requesting : {{request.user.firstName}} {{request.user.lastName}}</p>
                         <p>Description : {{request.description}}</p>
@@ -17,12 +17,15 @@
                         <p>Delivery Mode : {{request.deliveryMode}}</p>
                         <p>Status : {{request.status}}</p>
                         <p>Reason For Rejection : {{request.rejectionReason}}</p><br>
+                        
+                        <button (click)="getByRequestId()">Edit Request</button>
+                        <button (click)="delete()">Delete Request</button>
+
                         <p class="lineItemsHeader">List of Line Items :</p>
 
                         <app-line-item-list></app-line-item-list>
 
-                        <button (click)="getByRequestId()">Edit</button>
-                        <button >Delete</button>
+
                     </section>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 <p>line-item-edit works!</p>
 <header>
-    <app-menu></app-menu>
+    <h1>Line Items:</h1>
 </header>
 
 <body>
@@ -14,11 +14,11 @@
                     <strong>{{lineItem.product.name}}</strong>
                     </h3>
                     <p>Part Number : {{lineItem.product.partNbr}}</p>
-                    <p>Vendor : {{product.vendor.name}}</p>
+                    <p>Vendor : {{lineItem.product.vendor.name}}</p>
                     <p>Unit : {{lineItem.product.unit}}</p>
                     <p>Price : {{lineItem.product.price | currency: 'USD' : 'symbol' : '0.0-2'}}</p>
                     <label for="quantity">Quantity :</label> 
-                    <input (ngModel)]="lineItem.product.quantity" type="text" name="quantity"><br>
+                    <input [(ngModel)]="lineItem.quantity" type="text" name="quantity" placeholder="enter quantity"><br>
                     <button (click)="update()">Save</button>
                 </section>
             </div>

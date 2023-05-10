@@ -1,6 +1,8 @@
 import { Component } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
+import { LineItemService } from "src/app/service/line-items.service";
 import { RequestService } from "src/app/service/request.service";
+import { LineItem } from "src/model/line-item.class";
 import { Request } from "src/model/request.class";
 import { User } from "src/model/user.class";
 
@@ -15,17 +17,19 @@ export class RequestReviewComponent {
     request: Request = new Request();
     requests: Request[] = [];
     status: "";
-    userId: number = 0;
+    id: number;
+    lineItems!: LineItem[];
 
     constructor(private requestService: RequestService,
+        private lineItemService: LineItemService,
         private router: Router, 
         private route: ActivatedRoute) { }
 
 
     ngOnInit() {
-        // this.route.params.subscribe(params => this.userId = params['userId']);
-        this.requestService.getAllForReview(this.userId).subscribe(jsonResponse =>
-            this.requests = jsonResponse as Request[]);
+        this.route.params.subscribe(params => this.id = params['id']);
+        this.lineItemService.getByRequestId(this.id).subscribe(jsonResponse =>
+            this.lineItems = jsonResponse as LineItem[]);
     }    
 
 

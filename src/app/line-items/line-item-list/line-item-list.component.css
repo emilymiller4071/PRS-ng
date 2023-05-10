@@ -17,3 +17,9 @@ td, th {
     font-size: 1.5rem;
     font-weight: 600;
 }
+
+select {
+    margin-left: 20px;
+    width: 150px;
+    text-align: center;
+}

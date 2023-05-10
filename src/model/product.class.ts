@@ -9,7 +9,7 @@ export class Product {
     photoPath?: string;
     vendor!: Vendor;
 
-    constructor(id: number = 0, partNbr: string = "", name: string = "",
+    constructor(id: number = null, partNbr: string = "", name: string = "",
         price: number = 0, unit: string = "", photoPath: string = "",
          vendor: Vendor = new Vendor()) {
             this.id = id;

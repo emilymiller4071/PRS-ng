@@ -26,23 +26,21 @@
 
         <label for="deliveryMode">Delivery Mode :</label>
         <select [(ngModel)]="request.deliveryMode" name="deliveryMode">
-            <option value="" selected>select delivery mode</option>
+            <option  value="" selected>select delivery mode</option>
             <option>Express</option>
             <option>Regular</option>
             <option>Pick-up</option>
         </select>
         <br>
-        
+
         <label for="status">Status :</label>
-        <input [(ngModel)]="request.status" type="text" name="status" placeholder="{{request.status}}"><br>
+        <input [(ngModel)]="request.status" type="text" name="status" placeholder="{{request.status}}" disabled><br>
 
         <label for="rejectionReason">Reason for Rejection :</label>
         <input [(ngModel)]="request.rejectionReason" type="text" name="rejectionReason" placeholder="{{request.rejectionReason}}"><br>
 
-
+        <button (click)="update()">Save</button>
         <app-line-item-list></app-line-item-list>
-
-        <button >Save</button>
 
     </form>
 </div>
