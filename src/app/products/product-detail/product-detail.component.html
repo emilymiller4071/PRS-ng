@@ -5,27 +5,35 @@
     </head>
     
     <body>
-        <div class="card-container">
-            <div class="col-sm-6">
-                <div class="card large">
-                    <section class="section dark">
-                        <p><img src="../../../assets/shoe.png"></p>
-                        <h3 class="strong">
-                        <strong>{{product.name}}</strong>
-                        </h3>
-                        <p>Part Number : {{product.partNbr}}</p>
-                        <p>Vendor : {{product.vendor.name}}</p>
-                        <p>Unit : {{product.unit}}</p>
-                        <p>Price : {{product.price | currency: 'USD' : 'symbol' : '0.0-2'}}</p>
-                        <button (click)="editClick()">Edit</button>
-                        <button type="button" (click)="delete()">Delete</button>
-                        <button routerLink="/product/list">Back</button>
-                    </section>
+
+        <div class="container py-5">
+            <div class="d-flex justify-content-center">
+                <div class="col-8">
+                    <div class="card" style="width: 20rem;"> <img src="../../assets/shoe.png" class="card-img-top" alt="...">
+                  
+                        <div class="card-body">
+                        <h5 class="card-title"><strong>{{product.name}}</strong></h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Vendor : {{product.vendor.name}}</li>
+                            <li class="list-group-item">Part Number : {{product.partNbr}}</li>
+                            <li class="list-group-item">Unit : {{product.unit}}</li>
+                            <li class="list-group-item">Price : {{product.price | currency: 'USD' : 'symbol' : '0.0-2'}}</li>
+                        </ul>
+                    
+                        <div class="card-body">
+                            <button (click)="editClick()">Edit</button>
+                            <button type="button" (click)="delete()">Delete</button>
+                            <button routerLink="/product/list">Back</button>
+                        </div>
+                
+                    </div>
                 </div>
             </div>
         </div>
-    
-    
+          
     
     <app-footer></app-footer>
     </body>
